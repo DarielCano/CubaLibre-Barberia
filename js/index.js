@@ -2,13 +2,6 @@
 
 "use strict";
 
-/* class Cliente {
-  constructor(nombre, apellido, edad, cita) {
-    (this.nombre = nombre), (this.apellido = apellido), (this.edad = edad),
-    this.cita = cita[];
-  }
-} */
-
 let terminar = "no";
 let op = "";
 let fin = "";
