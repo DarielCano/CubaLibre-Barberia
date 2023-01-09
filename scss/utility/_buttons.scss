@@ -1,0 +1,9 @@
+.menu-btn {
+  margin-right: 1rem;
+  cursor: pointer;
+  svg {
+    fill: map-get($colors, white-color);
+    height: 2.5em;
+    width: 2.5em;
+  }
+}

@@ -1,6 +1,6 @@
-@charset "UTF-8";
 :root {
   --negro: #393939;
+
   /* Tipografía */
   --tipo-principal: Helvetica, Arial, sans-serif;
   --tipo-secundaria: Verdana;
@@ -25,11 +25,9 @@ figure {
   width: 100%;
   display: block;
   /* opcional */
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   /* opcional */
-  -o-object-position: center center;
-     object-position: center center;
+  object-position: center center;
 }
 
 /* Reseteamos los enlaces para funcionar como cajas... */
@@ -39,7 +37,6 @@ a {
   color: inherit;
   font-size: inherit;
 }
-
 /* ... excepto los que se encuentran en párrafos */
 p a {
   display: inline;
@@ -61,7 +58,6 @@ html {
 h1 {
   font-size: 2.5em;
 }
-
 h1,
 h2,
 h3,
@@ -82,7 +78,6 @@ em {
   text-decoration: none;
   color: inherit;
 }
-
 /* Evitamos problemas con los pseudoelementos de quotes */
 blockquote:before,
 blockquote:after,
@@ -93,10 +88,6 @@ q:after {
 }
 
 /* Configuramos el texto que seleccionamos */
-::-moz-selection {
-  background-color: var(--negro);
-  color: var(--blanco);
-}
 ::selection {
   background-color: var(--negro);
   color: var(--blanco);
@@ -111,16 +102,12 @@ button,
 label {
   font-family: inherit;
   font-size: inherit;
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
+  hyphens: auto;
   background-color: transparent;
   color: inherit;
   display: block;
   /* opcional */
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
 }
 
 /* Reseteamos las tablas */
@@ -137,7 +124,6 @@ svg {
   display: block;
   fill: currentColor;
 }
-
 /* (Probándolo, no usar en producción) En el caso de añadir una  */
 /* p svg{
   display: inline;
@@ -152,9 +138,7 @@ body {
   /* opcional */
   line-height: 1.4em;
   /* opcional */
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
+  hyphens: auto;
   /* opcional */
   font-smooth: always;
   /* opcional */
@@ -162,120 +146,3 @@ body {
   /* opcional */
   -moz-osx-font-smoothing: grayscale;
 }
-
-.menu-btn {
-  margin-right: 1rem;
-  cursor: pointer;
-}
-.menu-btn svg {
-  fill: #ffffff;
-  height: 2.5em;
-  width: 2.5em;
-}
-
-.header {
-  background-color: yellow;
-  height: 4rem;
-  width: 100%;
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 999;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.header__logo {
-  padding: 0.5em 1em;
-}
-
-.nav {
-  position: fixed;
-  left: 0;
-  top: 4rem;
-  width: 100%;
-  opacity: 0;
-  color: black;
-  pointer-events: none;
-  transition: opacity 0.5s ease;
-}
-.nav.is-active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.none {
-  display: none;
-}
-
-.header-background {
-  background-color: rgba(169, 50, 38, 0.9);
-  transition: all 0.5s ease;
-}
-
-@media screen and (min-width: 900px) {
-  .nav {
-    position: static;
-    opacity: 1;
-    pointer-events: auto;
-  }
-  .nav__list {
-    background-color: transparent;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-  }
-  .nav__list li {
-    margin-right: 0.5rem;
-  }
-  .nav__list:last-child {
-    margin-bottom: 0;
-  }
-  .menu-btn {
-    display: none;
-  }
-  .header__text p {
-    font-size: 3rem;
-  }
-  .btn-text {
-    width: 30rem;
-  }
-  .aditional-info {
-    flex-direction: row;
-    justify-content: space-around;
-  }
-  .info_img {
-    width: 22rem;
-    height: 22rem;
-  }
-  .info_text {
-    width: 22rem;
-    height: 22rem;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .header-btn {
-    width: 20rem;
-  }
-  .grid-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .block-1 {
-    grid-column: 2;
-  }
-  .btn-text {
-    width: 15rem;
-  }
-  .info_img {
-    width: 25rem;
-    height: 25rem;
-  }
-  .info_text {
-    width: 25rem;
-    height: 25rem;
-  }
-  .footer {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-}/*# sourceMappingURL=style.css.map */

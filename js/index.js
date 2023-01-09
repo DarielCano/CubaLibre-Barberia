@@ -1,13 +1,14 @@
+import { menu } from "./menu";
+
+menu(".menu-btn", ".nav");
 /* SIMULANDO BARBERIA, CON CITAS Y CON TIENDA DE PRODUCTOS INCLUIDA */
 
-"use strict";
-
-let terminar = "no";
+/* let terminar = "no";
 let op = "";
 let fin = "";
 let citas = [];
 
-/* productos en stock y su disponibilidad */
+/* productos en stock y su disponibilidad 
 let cantCeras = 10;
 let cantGel = 10;
 let cantMaq = 10;
@@ -15,7 +16,7 @@ let cantTinte = 10;
 let cant = 0;
 let carrito = [];
 
-/* funciones corte y cita */
+/* funciones corte y cita 
 const consultarEdad = (edad) => {
   if (edad < 18) return "menor";
   else return "mayor";
@@ -104,7 +105,7 @@ const mostrarCitas = () => {
   else return citas;
 };
 
-/* funciones venta productos barberia */
+/* funciones venta productos barberia 
 const articulosEnVenta = () => {
   alert(`Acabas de ingresar a nuestra tienda`);
   let producto = prompt(`Contamos con los siguientes productos:
@@ -257,7 +258,7 @@ while (isNaN(edad) || edad < 1 || edad > 120) {
   edad = parseInt(prompt(`Inserte edad valida`));
 }
 
-/* ciclo principal del programa */
+/* ciclo principal del programa 
 while (terminar == "no") {
   let opcion = prompt(`
   
@@ -293,3 +294,4 @@ while (terminar == "no") {
       break;
   }
 }
+ */
