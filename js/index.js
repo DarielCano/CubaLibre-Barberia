@@ -1,4 +1,4 @@
-import { menu } from "./menu";
+import { menu } from "./menu.js";
 
 menu(".menu-btn", ".nav");
 /* SIMULANDO BARBERIA, CON CITAS Y CON TIENDA DE PRODUCTOS INCLUIDA */

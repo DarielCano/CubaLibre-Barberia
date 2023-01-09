@@ -1,5 +1,5 @@
 .header {
-  background-color: yellow;
+  background-color: transparent;
   height: $headerHeight;
   width: 100%;
   position: fixed;
@@ -27,5 +27,47 @@
   &.is-active {
     opacity: 1;
     pointer-events: auto;
+  }
+
+  &__list {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    li {
+      color: map-get($colors, white-color);
+      padding: 0.4rem;
+      margin-top: 0.5rem;
+    }
+    &:last-child {
+      margin-bottom: 1rem;
+    }
+    a {
+      width: auto;
+      padding-top: 0.2rem;
+
+      text-align: center;
+      transition: all 0.4s ease;
+      &:hover {
+        color: map-get($colors, second-color);
+        border-bottom: 2px solid map-get($colors, second-color);
+      }
+    }
+  }
+}
+
+.imagen-ppal {
+  background-image: url(../assets/img/pexels-photo-897271.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  &__opacity {
+    background-color: map-get($colors, dark-color-shadow);
+    height: 100%;
+    width: 100%;
   }
 }
