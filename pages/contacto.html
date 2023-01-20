@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="../css/style.css" />
 
   <title>Barbería CubaLibre</title>
 </head>
@@ -28,45 +28,29 @@
       </button>
       <nav class="nav">
         <ul class="nav__list">
-          <li><a href="./index.html">Inicio</a></li>
-          <li><a href="./pages/citas.html">Citas</a></li>
-          <li><a href="./pages/tienda.html">Tienda</a></li>
-          <li><a href="./pages/contacto.html">Contáctanos</a></li>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="./citas.html">Citas</a></li>
+          <li><a href="./tienda.html">Tienda</a></li>
+          <li><a href="./contacto.html">Contáctanos</a></li>
              </ul>
     </div>
   </header>
   <main>
-    <div class="imagen-ppal">
-      <div class="imagen-ppal__opacity">
-        <a href="#" class=" btn btn-reserva"> Agenda tu cita</a>
-      </div>
+    <div class="imagen-ppal"><!-- cambiar imagen  -->
+        <div class="imagen-ppal__opacity">
+    <form class="contact-form box-shadow-1">
+        <input type="text" name="name" placeholder="Ingresa tu nombre *"
+          title="Nombre sólo acepta letras y espacios en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required>
+        <input type="email" name="email" placeholder="Ingresa tu correo *" title="Email incorrecto"
+          pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
+        <textarea name="comments" cols="50" rows="10" placeholder="Déjame tus comentarios *" required></textarea>
+        <div class="contact-form-loader text-center none">
+          <img src=" assets/loader.svg" alt="Enviando...">
+        </div>
+        <input class="btn" type="submit" value="ENVIAR MENSAJE">
+      </form>  
+</div>
     </div>
-<section class="info">
-  <h2>Vive la experiencia. Echa pa acá con CubaLibre</h2>
-  <div class="general-info">
-    <div class="general-info__img"> <img src="" alt=""> </div>
-    <div class="general-info__text"> <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
-      mollitia explicabo laudantium
-      amet nesciunt harum velit nobis iusto magnam! Non deserunt incidunt pariatur impedit corrupti neque amet animi!
-      Voluptas, vel</p> 
-    </div>
-    <div class="general-info__img change-img"> </div>
-    <div class="general-info__text  change-text"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
-      mollitia explicabo laudantium
-      amet nesciunt harum velit nobis iusto magnam! Non deserunt incidunt pariatur impedit corrupti neque amet animi!
-      Voluptas, vel</p> </div>
-  </div>
-</section>
-<div class="logo-wp">
- <a href="#">
-  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-whatsapp" width="50" height="50" viewBox="0 0 24 24" stroke-width="1" stroke="#00b341" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-    <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
-    <path d="M9 10a0.5 .5 0 0 0 1 0v-1a0.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a0.5 .5 0 0 0 0 -1h-1a0.5 .5 0 0 0 0 1" />
-  </svg>
- </a> 
-</div>    
-
   </main>
   <footer class="footer">
     <div class="footer__dir">
@@ -103,7 +87,7 @@
           </div>
   </footer>
 
-  <script src="./js/index.js" type="module"></script>
+  <script src="../js/index.js" type="module"></script>
 </body>
 
 </html>
