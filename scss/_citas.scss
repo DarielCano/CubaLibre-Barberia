@@ -1,32 +1,30 @@
-.main-citas {
-  color: white;
-  height: 100vh;
-}
-
 .contenedor-cita {
-  height: 70%;
+  color: map-get($colors, white-color);
+  width: 90%;
+  @include margin-lat;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  background-color: map-get($colors, dark-color-shadow);
+  justify-content: center;
+  transition: all 0.5s ease;
 }
 
 .cita {
-  /*   width: 70%;
-  height: 30%; */
+  /*   height: 50%; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 .cita-encabezado {
-  height: 10rem;
+  height: 8rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
 }
 .crear-cita {
+  font-size: 1.7rem;
 }
 .texto-cita {
 }
@@ -50,15 +48,31 @@
   margin-top: 1rem;
   width: 100%;
   ul {
-    background-color: aqua;
+    background-color: map-get($colors, white-color);
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 
     li {
-      border: 2px solid black;
+      color: map-get($colors, red-color);
+      border: 2px solid map-get($colors, red-color);
       display: flex;
       justify-content: center;
+      padding: 0.2rem 0.5rem;
+      &:hover {
+        background-color: map-get($colors, second-color);
+        color: map-get($colors, white-color);
+        transition: all 0.5s ease;
+      }
+
+      button {
+        width: 100%;
+        font-size: 1.3rem;
+        font-weight: bold;
+        &:hover {
+          cursor: pointer;
+        }
+      }
     }
   }
 }
@@ -77,20 +91,119 @@
   grid-template-columns: repeat(3, 1fr);
   column-gap: 1rem;
   row-gap: 1rem;
-  div {
+
+  &__servicio {
+    background-color: map-get($colors, white-color);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    background-color: wheat;
-    height: 8rem;
+    height: 6em;
+    border: 2px solid map-get($colors, red-color);
+    border-radius: 18px;
+    h3 {
+      color: map-get($colors, second-color);
+      text-align: center;
+    }
+    strong {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: map-get($colors, second-color);
+      text-align: center;
+    }
+    &:hover {
+      background-color: map-get($colors, second-color);
+      color: map-get($colors, white-color);
+      transition: all 0.5s ease;
+      cursor: pointer;
+      h3 {
+        color: map-get($colors, white-color);
+      }
+      strong {
+        color: map-get($colors, white-color);
+      }
+    }
   }
-  h3 {
+}
+
+.contenedor-cita__info-cita {
+  width: 100%;
+
+  margin-top: 1rem;
+  h2,
+  p {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  p {
+    margin-bottom: 1rem;
+  }
+
+  div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    label {
+      align-self: flex-start;
+      padding: 0.5rem 1rem;
+      width: 7rem;
+    }
+  }
+
+  input {
+    border: 1px solid map-get($colors, white-color);
+    border-radius: 16px;
+    background-color: map-get($colors, white-color);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.3rem;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+
+  .info-cita_btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.cita-btn {
+  background-color: map-get($colors, white-color);
+  border: 1px solid map-get($colors, red-color);
+  color: map-get($colors, red-color);
+  width: 10rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  &:hover {
+    background-color: map-get($colors, second-color);
+    color: map-get($colors, white-color);
+    transition: all 0.5s ease;
+  }
+}
+
+.resumen {
+  width: 100%;
+  h2 {
     text-align: center;
   }
-  strong {
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: map-get($colors, second-color);
+  margin-top: 2rem;
+  .resumen-cita {
+    margin-top: 1rem;
+  }
+  .resumen-servicios {
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid map-get($colors, white-color);
+  }
+  .resumen-btn {
+    margin-top: 1rem;
+    .cita-btn {
+      @include margin-lat;
+    }
+    button {
+      margin-top: 3rem;
+    }
   }
 }

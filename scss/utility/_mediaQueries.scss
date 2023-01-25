@@ -8,6 +8,15 @@
   .main-citas {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .centrar {
+    width: 20rem;
+    @include margin-lat;
+  }
 }
 
 @media screen and (min-width: 900px) {
@@ -23,6 +32,9 @@
       align-items: center;
       li {
         margin-right: 0.5rem;
+        &:hover {
+          border: 0;
+        }
       }
       &:last-child {
         margin-bottom: 0;
@@ -66,8 +78,25 @@
       grid-row: 2;
     }
   }
-}
 
+  .contact-form {
+    width: 50rem;
+
+    input[type="submit"] {
+      width: 20rem;
+    }
+  }
+
+  .search {
+    input {
+      width: 40%;
+    }
+  }
+
+  .form-sesion {
+    width: 50rem;
+  }
+}
 @media screen and (min-width: 1024px) {
   .header-btn {
     width: 20rem;
@@ -95,5 +124,13 @@
   .footer {
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
+  }
+
+  .contenedor-cita {
+    width: 50%;
+  }
+
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

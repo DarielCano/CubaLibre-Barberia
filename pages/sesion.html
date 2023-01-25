@@ -8,7 +8,7 @@
 
   <link rel="stylesheet" href="../css/style.css" />
 
-  <title>Barbería CubaLibre</title>
+  <title>Iniciar Sesión</title>
 </head>
 
 <body>
@@ -28,31 +28,73 @@
       </button>
       <nav class="nav">
         <ul class="nav__list">
-          <li><a href="../index.html">Inicio</a></li>
-          <li><a href="./citas.html">Citas</a></li>
-          <li><a href="./tienda.html">Tienda</a></li>
-          <li><a class="active-page" href="./contacto.html">Contáctanos</a></li>
+          <li><a  href="../index.html">Inicio</a></li>
+          <li><a href="./pages/citas.html">Citas</a></li>
+          <li><a href="./pages/tienda.html">Tienda</a></li>
+          <li><a href="./pages/contacto.html">Contáctanos</a></li>
              </ul>
     </div>
   </header>
   <main>
-    <div class="imagen-ppal"><!-- cambiar imagen  -->
-        <div class="imagen-ppal__opacity">
+    <div class="imagen-ppal">
+      <div class="imagen-ppal__opacity">
+
+        <div class="acceso">
+            <h2>Inicia Sesión</h2>
          
-    <form class="contact-form box-shadow-1">
-      <legend>Déjanos tus comentarios</legend>
-        <input class="input-text" type="text" name="name" placeholder="Ingresa tu nombre *"
-          title="Nombre sólo acepta letras y espacios en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required>
-        <input class="input-text" type="email" name="email" placeholder="Ingresa tu correo *" title="Email incorrecto"
-          pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
-        <textarea class="input-text" name="comments" cols="50" rows="10" placeholder="Déjame tus comentarios *" required></textarea>
-        <div class="contact-form-loader text-center none">
-          <img src=" assets/loader.svg" alt="Enviando...">
-        </div>
-        <input class="btn" type="submit" value="ENVIAR MENSAJE">
-      </form>  
+
+<form class="form-sesion" action="#">
+    <div class="form-sesion__email">
+        <label for="email-sesion">Email</label>
+        <input type="email" name="email-sesion" id="email-sesion">
+      </div>
+
+      <div class="form-sesion__password">
+        <label for="pass-sesion">Contraseña</label>
+        <input type="password" name="pass-sesion" id="pass-sesion">
+      </div>
+
+      <div class="form-sesion__enviar">
+        <input class="btn centrar" type="submit" value="Iniciar Sesión">
+      </div>
+
+    
+ </form>
+<div class="crear-cuenta">
+    <p>Aún no tienes cuenta? <a href="./registro.html">Crear una</a></p>
+    <a href="#">Olvidaste tu contraseña?</a>
 </div>
+  </div>
+
+  <article id="gracias" class="modal">
+    <div class="modal-content">
+      <article class="form-sesion-response">
+        <h3>
+          ¡Bienvenido!
+        </h3>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M12,18c4,0,5-4,5-4H7C7,14,8,18,12,18z" />
+          <path
+            d="M12,2C6.486,2,2,6.486,2,12c0,5.514,4.486,10,10,10s10-4.486,10-10C22,6.486,17.514,2,12,2z M12,20c-4.411,0-8-3.589-8-8 s3.589-8,8-8s8,3.589,8,8S16.411,20,12,20z" />
+          <path
+            d="M13 12l2 .012C15.012 11.55 15.194 11 16 11s.988.55 1 1h2c0-1.206-.799-3-3-3S13 10.794 13 12zM8 11c.806 0 .988.55 1 1h2c0-1.206-.799-3-3-3s-3 1.794-3 3l2 .012C7.012 11.55 7.194 11 8 11z" />
+        </svg>
+      </article>
     </div>
+  </article>
+  
+
+
+            
+     
+           
+           
+
+          </div>
+      </div>
+    
+
+
   </main>
   <footer class="footer">
     <div class="footer__dir">
@@ -89,7 +131,7 @@
           </div>
   </footer>
 
-  <script src="../js/index.js" type="module"></script>
+  <script src="./js/index.js" type="module"></script>
 </body>
 
 </html>

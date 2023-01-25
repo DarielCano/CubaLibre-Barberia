@@ -14,8 +14,20 @@
   z-index: 998;
 }
 
-.contenedor-cita {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
+.click_citas {
+  /* usar ara cuando se seleccione la cita */
+  background-color: map-get($colors, second-color);
+  color: map-get($colors, white-color);
+}
+
+.citas-opacity {
+  opacity: 0;
+}
+
+.active-page {
+  color: map-get($colors, red-color);
+}
+
+.centrar {
+  width: 100%;
 }

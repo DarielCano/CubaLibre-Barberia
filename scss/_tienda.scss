@@ -1,0 +1,46 @@
+.tienda {
+  padding-top: calc($headerHeight + 5rem);
+  padding-bottom: 2rem;
+  background-image: url(../assets/img/depositphotos_71389881-stock-photo-vintage-equipment-of-a-barber.jpg);
+  width: 100%;
+  h2 {
+    color: map-get($colors, white-color);
+
+    padding-bottom: 1rem;
+    text-align: center;
+  }
+  input {
+    width: 70%;
+    background-color: map-get($colors, white-color);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 16px;
+    padding: 0.5rem 0.5rem;
+  }
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    /*   background-color: map-get($colors, dark-color-shadow); */
+  }
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    width: 5rem;
+    cursor: pointer;
+    fill: transparent;
+    opacity: 0.8;
+    transition: opacity 0.5s ease;
+    &:hover {
+      /*   fill: map-get($colors, white-color); */
+      opacity: 1.5;
+    }
+  }
+}

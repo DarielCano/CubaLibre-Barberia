@@ -38,7 +38,7 @@
     margin-left: 1rem;
     color: map-get($colors, red-color);
     opacity: 0;
-    transition: all 0.7s ease;
+    transition: all 0.5s ease;
   }
   &:hover {
     span {

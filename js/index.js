@@ -1,7 +1,13 @@
+import { menu } from "./menu.js";
+import { scrollTop } from "./scroll.js";
+
+menu(".menu-btn", ".nav");
+scrollTop(".header", ".nav");
+
 /* SIMULANDO BARBERIA, CON CITAS Y CON TIENDA DE PRODUCTOS INCLUIDA */
 
 /* declaracion de clases */
-class Usuario {
+/* class Usuario {
   constructor(nombre, apellido, edad) {
     (this.nombre = nombre), (this.apellido = apellido), (this.edad = edad);
   }
@@ -23,7 +29,7 @@ class Usuario_barberia extends Usuario {
   }
 
   eliminarServicio(servicio) {
-    /*    console.log(this.servicios.findIndex((element) => element == servicio)); */
+    /*    console.log(this.servicios.findIndex((element) => element == servicio)); 
     if (this.servicios.findIndex((element) => element == servicio) == -1) {
       return false;
     } else {
@@ -54,7 +60,7 @@ class Producto {
 ///////////////////////////////////////////////////////////////////////////////////
 
 /* declaracion de arreglo de productos en tienda
-(Se agregan hipoteticamente del backend(base de datos)) */
+(Se agregan hipoteticamente del backend(base de datos)) 
 let productos = [
   new Producto("Cera para peinar", 250, 10),
   new Producto("Maquina Trimmer", 1000, 10),
@@ -63,7 +69,7 @@ let productos = [
 ];
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/* declaracion de variables */
+/* declaracion de variables 
 let terminar = "no";
 let op = "";
 let fin = "";
@@ -75,7 +81,7 @@ let prod;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
-/* funciones Servicios de corte */
+/* funciones Servicios de corte 
 const respuesta = (tipoCorte) => {
   fin = prompt(
     `Ha elegido ${tipoCorte}, presione cualquier tecla para confirmar o escriba NO/no para cancelar`
@@ -145,7 +151,7 @@ const servicioMayor = () => {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-/* funciones venta productos barberia */
+/* funciones venta productos barberia 
 const articulosEnVenta = () => {
   alert(`Acabas de ingresar a nuestra tienda`);
   let string = `Contamos con los siguientes productos:`;
@@ -296,7 +302,7 @@ const seleccionCarrito = (prod) => {
                 Para otra compra vuelva a accedera nuestra tienda. Una disculpa`);
       } else {
         productos[3].actualizarStock(cant);
-        /* cantTinte -= cant; */
+        /* cantTinte -= cant; 
         alert(
           `Gracias por su compra.
           Precio a pagar: ${productos[3].calcularMonto(cant)}
@@ -325,7 +331,7 @@ const seleccionCarrito = (prod) => {
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
-/* Entrada de datos */
+/* Entrada de datos 
 let nombre = prompt(`Bienvenido a CubaLibre Barbería.
 Inserte sus datos. Nombre: `);
 
@@ -345,7 +351,7 @@ while (isNaN(edad) || edad < 1 || edad > 120) {
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-/* declaracion de objetos cliente y cliente corte */
+/* declaracion de objetos cliente y cliente corte 
 const cliente = new Usuario(nombre, apellido, edad);
 const clienteCorte = new Usuario_barberia(
   cliente.nombre,
@@ -356,7 +362,7 @@ const clienteCorte = new Usuario_barberia(
 
 ////////////////////////////////////////////////////////////////////////////////
 
-/* ciclo principal del programa */
+/* ciclo principal del programa 
 
 while (terminar == "no") {
   let opcion = prompt(`
@@ -412,11 +418,6 @@ while (terminar == "no") {
       terminar = "si";
       break;
   }
-}
+} */
 
 /////////////////////////////////////////////////////////////////////////////////
-import { menu } from "./menu.js";
-import { scrollTop } from "./scroll.js";
-
-menu(".menu-btn", ".nav");
-scrollTop(".header", ".nav");

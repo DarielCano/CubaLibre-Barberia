@@ -30,7 +30,7 @@
   }
 
   &__list {
-    background-color: transparent;
+    background-color: map-get($colors, dark-color-menu);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,7 +41,7 @@
       padding: 0.4rem;
       margin-top: 0.5rem;
       width: 100%;
-      transition: all 0.8s ease;
+      transition: all 0.5s ease;
       &:hover {
         border: 1px solid map-get($colors, red-color);
         a {
@@ -58,7 +58,7 @@
       padding-top: 0.2rem;
       width: 100%;
       text-align: center;
-      transition: all 0.6s ease;
+      transition: all 0.5s ease;
     }
   }
 }

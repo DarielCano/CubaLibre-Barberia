@@ -203,7 +203,7 @@ body {
   margin-left: 1rem;
   color: #ff0000;
   opacity: 0;
-  transition: all 0.7s ease;
+  transition: all 0.5s ease;
 }
 .btn-reserva:hover span {
   opacity: 1;
@@ -240,7 +240,7 @@ body {
   pointer-events: auto;
 }
 .nav__list {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -251,7 +251,7 @@ body {
   padding: 0.4rem;
   margin-top: 0.5rem;
   width: 100%;
-  transition: all 0.8s ease;
+  transition: all 0.5s ease;
 }
 .nav__list li:hover {
   border: 1px solid #ff0000;
@@ -268,7 +268,7 @@ body {
   padding-top: 0.2rem;
   width: 100%;
   text-align: center;
-  transition: all 0.6s ease;
+  transition: all 0.5s ease;
 }
 
 .imagen-ppal {
@@ -339,28 +339,38 @@ body {
   z-index: 998;
 }
 
-.contenedor-cita {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
+.click_citas {
+  /* usar ara cuando se seleccione la cita */
+  background-color: #4173f9;
+  color: #ffffff;
 }
 
-.main-citas {
-  color: white;
-  height: 100vh;
+.citas-opacity {
+  opacity: 0;
+}
+
+.active-page {
+  color: #ff0000;
+}
+
+.centrar {
+  width: 100%;
 }
 
 .contenedor-cita {
-  height: 70%;
+  color: #ffffff;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  transition: all 0.5s ease;
 }
 
 .cita {
-  /*   width: 70%;
-  height: 30%; */
+  /*   height: 50%; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -368,11 +378,15 @@ body {
 }
 
 .cita-encabezado {
-  height: 10rem;
+  height: 8rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+}
+
+.crear-cita {
+  font-size: 1.7rem;
 }
 
 .usuario-citas {
@@ -395,15 +409,30 @@ body {
   width: 100%;
 }
 .cita-selector ul {
-  background-color: aqua;
+  background-color: #ffffff;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
 .cita-selector ul li {
-  border: 2px solid black;
+  color: #ff0000;
+  border: 2px solid #ff0000;
   display: flex;
   justify-content: center;
+  padding: 0.2rem 0.5rem;
+}
+.cita-selector ul li:hover {
+  background-color: #4173f9;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+.cita-selector ul li button {
+  width: 100%;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.cita-selector ul li button:hover {
+  cursor: pointer;
 }
 
 .contenedor-cita__servicios {
@@ -422,21 +451,359 @@ body {
        column-gap: 1rem;
   row-gap: 1rem;
 }
-.bloque-servicios div {
+.bloque-servicios__servicio {
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  background-color: wheat;
-  height: 8rem;
+  height: 6em;
+  border: 2px solid #ff0000;
+  border-radius: 18px;
 }
-.bloque-servicios h3 {
+.bloque-servicios__servicio h3 {
+  color: #4173f9;
   text-align: center;
 }
-.bloque-servicios strong {
+.bloque-servicios__servicio strong {
   font-weight: bold;
   font-size: 1.2rem;
   color: #4173f9;
+  text-align: center;
+}
+.bloque-servicios__servicio:hover {
+  background-color: #4173f9;
+  color: #ffffff;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.bloque-servicios__servicio:hover h3 {
+  color: #ffffff;
+}
+.bloque-servicios__servicio:hover strong {
+  color: #ffffff;
+}
+
+.contenedor-cita__info-cita {
+  width: 100%;
+  margin-top: 1rem;
+}
+.contenedor-cita__info-cita h2,
+.contenedor-cita__info-cita p {
+  text-align: center;
+  margin-top: 1rem;
+}
+.contenedor-cita__info-cita p {
+  margin-bottom: 1rem;
+}
+.contenedor-cita__info-cita div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contenedor-cita__info-cita div label {
+  align-self: flex-start;
+  padding: 0.5rem 1rem;
+  width: 7rem;
+}
+.contenedor-cita__info-cita input {
+  border: 1px solid #ffffff;
+  border-radius: 16px;
+  background-color: #ffffff;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.3rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+.contenedor-cita__info-cita .info-cita_btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cita-btn {
+  background-color: #ffffff;
+  border: 1px solid #ff0000;
+  color: #ff0000;
+  width: 10rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+}
+.cita-btn:hover {
+  background-color: #4173f9;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+
+.resumen {
+  width: 100%;
+  margin-top: 2rem;
+}
+.resumen h2 {
+  text-align: center;
+}
+.resumen .resumen-cita {
+  margin-top: 1rem;
+}
+.resumen .resumen-servicios {
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid #ffffff;
+}
+.resumen .resumen-btn {
+  margin-top: 1rem;
+}
+.resumen .resumen-btn .cita-btn {
+  margin-left: auto;
+  margin-right: auto;
+}
+.resumen .resumen-btn button {
+  margin-top: 3rem;
+}
+
+.contact-form {
+  /*   background-color: white; */
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.contact-form legend {
+  color: #ffffff;
+  font-size: 1.5rem;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+.contact-form input[type=submit] {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.input-text {
+  width: 90%;
+  border: 1px solid #ffffff;
+  border-radius: 16px;
+  background-color: #ffffff;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.3rem;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+textarea {
+  resize: none;
+}
+
+.tienda {
+  padding-top: 9rem;
+  padding-bottom: 2rem;
+  background-image: url(../assets/img/depositphotos_71389881-stock-photo-vintage-equipment-of-a-barber.jpg);
+  width: 100%;
+}
+.tienda h2 {
+  color: #ffffff;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+.tienda input {
+  width: 70%;
+  background-color: #ffffff;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 16px;
+  padding: 0.5rem 0.5rem;
+}
+.tienda::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  /*   background-color: map-get($colors, dark-color-shadow); */
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search svg {
+  width: 5rem;
+  cursor: pointer;
+  fill: transparent;
+  opacity: 0.8;
+  transition: opacity 0.5s ease;
+}
+.search svg:hover {
+  /*   fill: map-get($colors, white-color); */
+  opacity: 1.5;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+}
+
+.cards__card {
+  border: 1px solid black;
+  width: 90%;
+  height: 20rem;
+  background-color: white;
+  padding-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cards__card:hover .block-cart {
+  -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+          clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+  transition: -webkit-clip-path 0.5s ease;
+  transition: clip-path 0.5s ease;
+  transition: clip-path 0.5s ease, -webkit-clip-path 0.5s ease;
+}
+.cards__card:hover .block-cart svg {
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.card-img {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 15rem;
+  background-color: red;
+  position: relative;
+}
+
+.card-texto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1rem;
+}
+.card-texto p,
+.card-texto strong {
+  text-align: center;
+}
+
+.block-cart {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+          clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+}
+.block-cart svg {
+  cursor: pointer;
+  opacity: 0;
+}
+
+.acceso {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.acceso h2 {
+  text-align: center;
+  padding: 3rem;
+}
+
+.form-sesion {
+  width: 90%;
+  padding-bottom: 2rem;
+}
+.form-sesion__email, .form-sesion__password, .form-sesion__nombre, .form-sesion__apellido, .form-sesion__phone {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-sesion__email label, .form-sesion__password label, .form-sesion__nombre label, .form-sesion__apellido label, .form-sesion__phone label {
+  align-self: flex-start;
+  padding: 0.5rem 1rem;
+  width: 7rem;
+}
+.form-sesion__email input, .form-sesion__password input, .form-sesion__nombre input, .form-sesion__apellido input, .form-sesion__phone input {
+  border: 1px solid #ffffff;
+  border-radius: 16px;
+  background-color: #ffffff;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.3rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+.form-sesion__enviar {
+  width: 100%;
+}
+
+.crear-cuenta {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* modal */
+.modal {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black-alpha-color);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 1s;
+}
+
+.modal-content {
+  position: relative;
+  width: 80%;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.modal-close svg {
+  width: 3rem;
+  height: 3rem;
+}
+
+.modal#gracias:target {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.form-sesion-response {
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+  background-color: #ffffff;
+}
+.form-sesion-response h3 {
+  margin-bottom: 1rem;
 }
 
 .footer {
@@ -483,6 +850,14 @@ body {
   .main-citas {
     grid-template-columns: repeat(2, 1fr);
   }
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .centrar {
+    width: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 @media screen and (min-width: 900px) {
   .nav {
@@ -498,6 +873,9 @@ body {
   }
   .nav__list li {
     margin-right: 0.5rem;
+  }
+  .nav__list li:hover {
+    border: 0;
   }
   .nav__list:last-child {
     margin-bottom: 0;
@@ -533,6 +911,18 @@ body {
     grid-column: 1;
     grid-row: 2;
   }
+  .contact-form {
+    width: 50rem;
+  }
+  .contact-form input[type=submit] {
+    width: 20rem;
+  }
+  .search input {
+    width: 40%;
+  }
+  .form-sesion {
+    width: 50rem;
+  }
 }
 @media screen and (min-width: 1024px) {
   .header-btn {
@@ -558,5 +948,11 @@ body {
   .footer {
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
+  }
+  .contenedor-cita {
+    width: 50%;
+  }
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
   }
 }/*# sourceMappingURL=style.css.map */
