@@ -1,49 +1,38 @@
+const d = document;
+const w = window;
+
+import { citas } from "./citas.js";
 import { menu } from "./menu.js";
 import { scrollTop } from "./scroll.js";
 
 menu(".menu-btn", ".nav");
 scrollTop(".header", ".nav");
+citas();
+
+/* Evitando el link hacia otras paginas sin registrars previamente */
+/* d.addEventListener("click", (e) => {
+  if (e.target.matches("a")) {
+    e.preventDefault();
+    if (sessionStorage.getItem("sesion") == null) {
+      let $mensaje = d.querySelector(".mensaje");
+      let $modal = d.querySelector(".modal");
+      let $link = d.querySelector(".link");
+      $mensaje.classList.remove("opacity");
+      $modal.classList.remove("opacity");
+      $link.addEventListener("click", (e) => {
+        window.location("./pages/registro.html");
+      });
+      console.log("no ha iniciado session");
+    }
+  }
+}); */
+/////////////////////////////////////////////////////////////////////////////
 
 /* SIMULANDO BARBERIA, CON CITAS Y CON TIENDA DE PRODUCTOS INCLUIDA */
 
 /* declaracion de clases */
-/* class Usuario {
-  constructor(nombre, apellido, edad) {
-    (this.nombre = nombre), (this.apellido = apellido), (this.edad = edad);
-  }
 
-  consultarEdad() {
-    if (this.edad < 18) return "menor";
-    else return "mayor";
-  }
-}
-
-class Usuario_barberia extends Usuario {
-  constructor(nombre, apellido, edad, servicios) {
-    super(nombre, apellido, edad);
-    this.servicios = servicios;
-  }
-
-  agregarServicio(servicio) {
-    this.servicios.push(servicio);
-  }
-
-  eliminarServicio(servicio) {
-    /*    console.log(this.servicios.findIndex((element) => element == servicio)); 
-    if (this.servicios.findIndex((element) => element == servicio) == -1) {
-      return false;
-    } else {
-      this.servicios = this.servicios.filter((element) => element != servicio);
-      return true;
-    }
-  }
-
-  mostrarServicios = () => {
-    if (this.servicios.length == 0) return `No tiene citas agendadas aún`;
-    else return this.servicios;
-  };
-}
-
+/*
 class Producto {
   constructor(nombre, precio, stock) {
     (this.nombre = nombre), (this.precio = precio), (this.stock = stock);

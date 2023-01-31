@@ -31,3 +31,27 @@
 .centrar {
   width: 100%;
 }
+
+.opacity {
+  opacity: 0;
+}
+
+.errorMessage {
+  background-color: map-get($colors, red-color);
+  display: block;
+  width: 100%;
+}
+
+.click-servicios {
+  background-color: map-get($colors, second-color);
+  /*   color: white; */
+}
+
+.color-white {
+  color: map-get($colors, white-color);
+}
+
+.border {
+  border: 3px solid map-get($colors, red-color);
+  background-color: map-get($colors, select-color);
+}

@@ -43,17 +43,24 @@
             <h2>Inicia Sesión</h2>
          
 
-<form class="form-sesion" action="#">
+<form class="form-sesion" id="sesion-form" action="#">
     <div class="form-sesion__email">
-        <label for="email-sesion">Email</label>
-        <input type="email" name="email-sesion" id="email-sesion">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" title="Email incorrecto"
+        pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
       </div>
-
+      <div class=" msg msg1 none"><h3>Usuario no encontrado</h3></div>
       <div class="form-sesion__password">
-        <label for="pass-sesion">Contraseña</label>
-        <input type="password" name="pass-sesion" id="pass-sesion">
+        <label for="password">Contraseña</label>
+        <input type="password" name="password" id="password" required>
       </div>
 
+      <div class="form-loader text-center none">
+        <img src="../assets/img/loader.svg" alt="Enviando...">
+      </div>
+
+      <div class=" msg msg2 none"><h3>Contraseña Incorrecta</h3></div>
+      <div class=" msg msg3 none"><h3>NO EXISTE NADIE REGISTRADO CON ESE EMAIL. POR FAVOR CREE UNA CUENTA</h3></div>
       <div class="form-sesion__enviar">
         <input class="btn centrar" type="submit" value="Iniciar Sesión">
       </div>
@@ -66,19 +73,10 @@
 </div>
   </div>
 
-  <article id="gracias" class="modal">
+  <article id="bienvenido" class="modal opacity">
     <div class="modal-content">
-      <article class="form-sesion-response">
-        <h3>
-          ¡Bienvenido!
-        </h3>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-          <path d="M12,18c4,0,5-4,5-4H7C7,14,8,18,12,18z" />
-          <path
-            d="M12,2C6.486,2,2,6.486,2,12c0,5.514,4.486,10,10,10s10-4.486,10-10C22,6.486,17.514,2,12,2z M12,20c-4.411,0-8-3.589-8-8 s3.589-8,8-8s8,3.589,8,8S16.411,20,12,20z" />
-          <path
-            d="M13 12l2 .012C15.012 11.55 15.194 11 16 11s.988.55 1 1h2c0-1.206-.799-3-3-3S13 10.794 13 12zM8 11c.806 0 .988.55 1 1h2c0-1.206-.799-3-3-3s-3 1.794-3 3l2 .012C7.012 11.55 7.194 11 8 11z" />
-        </svg>
+      <article class="form-sesion-response opacity">
+        
       </article>
     </div>
   </article>
@@ -125,13 +123,13 @@
         </svg>
       </a> 
             
-          </div>
+          </div>   
           <div class="footer__derechos">
             <small> &copy; CubaLibre Barbería. Todos los derechos reservados</small>
           </div>
   </footer>
 
-  <script src="./js/index.js" type="module"></script>
+  <script src="../js/sesion.js" type="module"></script>
 </body>
 
 </html>

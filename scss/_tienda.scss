@@ -3,6 +3,7 @@
   padding-bottom: 2rem;
   background-image: url(../assets/img/depositphotos_71389881-stock-photo-vintage-equipment-of-a-barber.jpg);
   width: 100%;
+  position: relative;
   h2 {
     color: map-get($colors, white-color);
 
@@ -18,13 +19,16 @@
     padding: 0.5rem 0.5rem;
   }
 
-  &::before {
+  /*   &::before {
     content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
     width: 100%;
     height: 100%;
-    background-color: red;
-    /*   background-color: map-get($colors, dark-color-shadow); */
-  }
+    background-color: map-get($colors, dark-color-shadow);
+  } */
 }
 
 .search {

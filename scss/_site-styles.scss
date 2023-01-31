@@ -115,3 +115,28 @@
     text-align: justify;
   }
 }
+
+.mensaje {
+  @include margin-lat;
+  transition: all 0.8s ease;
+  background-color: map-get($colors, white-color);
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 10rem;
+  border-radius: 18px;
+
+  h2 {
+    font-weight: 600;
+  }
+  P {
+    margin-top: 2rem;
+    a {
+      text-decoration: underline;
+      color: map-get($colors, red-color);
+    }
+  }
+}
