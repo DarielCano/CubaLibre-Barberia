@@ -174,6 +174,14 @@ $btnAnteriorResumen.addEventListener("click", (e) => {
 $btnReservarCita.addEventListener("click", (e) => {
   if (datosUsuario.fecha_cita || datosUsuario.hora_cita) {
     setData("usuario_cita", usuarioBarber);
+    Swal.fire({
+      icon: "success",
+      title: "Cita Agendada",
+      showConfirmButton: false,
+    });
+    setTimeout(() => {
+      w.open("../index.html", "_self");
+    }, 3000);
   } else {
     Swal.fire({
       icon: "error",
@@ -182,16 +190,3 @@ $btnReservarCita.addEventListener("click", (e) => {
     });
   }
 });
-
-/* d.addEventListener("DOMContentLoaded", (e) => {
-  const userCita = getData("usuario_cita");
-  $bloquesServ.forEach((el) => {
-    if (
-      userCita.servicios.findIndex(
-        (v) => v.nombre == el.firstElementChild.textContent
-      ) != -1
-    ) {
-      el.classList.add("border");
-    }
-  });
-}); */
