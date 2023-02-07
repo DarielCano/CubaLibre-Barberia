@@ -10,12 +10,17 @@ $enlaces.forEach((enlace) => {
   enlace.addEventListener("click", (e) => {
     if (sessionStorage.getItem("sesion") == null) {
       e.preventDefault();
-      Swal.fire({
-        icon: "error",
-        title: "NO HA INICIAD SESION",
-        text: "Debe iniciar sesión previamente para acceder a nuestros enlaces",
-      });
-      w.open("./pages/sesion.html", "_self");
+      setTimeout(() => {
+        Swal.fire({
+          icon: "error",
+          title: "NO HA INICIAD SESION",
+          text: "Debe iniciar sesión previamente para acceder a nuestros enlaces",
+          showConfirmButton: false,
+        });
+      }, 2000);
+      setTimeout(() => {
+        w.open("../index.html", "_self");
+      }, 3500);
     }
   });
 });
