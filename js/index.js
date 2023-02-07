@@ -12,8 +12,8 @@ $enlaces.forEach((enlace) => {
       e.preventDefault();
       Swal.fire({
         icon: "error",
-        title: "NO HA INICIAD SESION",
-        text: "Debe iniciar sesión previamente para acceder a nuestros enlaces",
+        title: "NO HA INICIADO SESION",
+        text: "Debe iniciar sesión previamente",
         showConfirmButton: false,
       });
 

@@ -59,12 +59,10 @@ const comprobarDatosRegistro = (datos) => {
       $msg.classList.add("none");
     }, 2000);
   } else {
-    console.log("entro aqui");
     datos.push(datosUser);
     console.log(datos);
     localStorage.setItem("usuarios", JSON.stringify(datos));
     sessionStorage.setItem("usuarioSesion", datosUser);
-
     sesion = true;
     sessionStorage.setItem("sesion", sesion);
 
@@ -83,11 +81,13 @@ const comprobarDatosRegistro = (datos) => {
 
 const enviarDatos = (e) => {
   e.preventDefault();
-  if (localStorage.length == 0 || !localStorage.getItem("usuarios")) {
+  if (!localStorage.getItem("usuarios")) {
     users.push(datosUser);
     let usersString = JSON.stringify(users);
     localStorage.setItem("usuarios", usersString);
     sessionStorage.setItem("usuarioSesion", JSON.stringify(datosUser));
+    sesion = true;
+    sessionStorage.setItem("sesion", sesion);
     $loader.classList.remove("none");
     setTimeout(() => {
       $loader.classList.add("none");
