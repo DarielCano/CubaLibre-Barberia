@@ -19,7 +19,7 @@ $enlaces.forEach((enlace) => {
         });
       }, 2000);
       setTimeout(() => {
-        w.open("../index.html", "_self");
+        w.open("./pages/sesion.html", "_self");
       }, 3500);
     }
   });
