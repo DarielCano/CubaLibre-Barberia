@@ -1,6 +1,11 @@
 import { menu } from "./menu.js";
 import { scrollTop } from "./scroll.js";
-import { Usuario, Usuario_barberia, leerDatos } from "./class_functions.js";
+import {
+  Usuario,
+  Usuario_barberia,
+  leerDatos,
+  getData,
+} from "./class_functions.js";
 
 const d = document;
 const w = window;
@@ -93,7 +98,7 @@ const enviarDatos = (e) => {
       w.open("../index.html", "_self");
     }, 3000);
   } else {
-    let usuariosStorage = leerDatos("usuarios");
+    let usuariosStorage = getData("usuarios");
 
     comprobarDatosRegistro(usuariosStorage);
   }
