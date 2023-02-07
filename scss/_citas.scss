@@ -160,6 +160,7 @@
     padding-left: 0.3rem;
     margin-bottom: 2rem;
     width: 100%;
+    color: black;
   }
 
   .info-cita_btn {
@@ -191,9 +192,17 @@
   }
   margin-top: 2rem;
   .resumen-cita {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     margin-top: 1rem;
   }
   .resumen-servicios {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     padding-bottom: 0.8rem;
     border-bottom: 1px solid map-get($colors, white-color);
   }

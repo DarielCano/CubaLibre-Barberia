@@ -367,6 +367,7 @@ body {
   padding-left: 0.3rem;
   margin-bottom: 2rem;
   width: 100%;
+  color: black;
 }
 .contenedor-cita__info-cita .info-cita_btn {
   display: flex;
@@ -398,9 +399,17 @@ body {
   text-align: center;
 }
 .contenedor-cita__resumen .resumen-cita {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   margin-top: 1rem;
 }
 .contenedor-cita__resumen .resumen-servicios {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   padding-bottom: 0.8rem;
   border-bottom: 1px solid #ffffff;
 }
@@ -468,6 +477,7 @@ textarea {
   } */
 }
 .tienda h2 {
+  font-size: 2rem;
   color: #ffffff;
   padding-bottom: 1rem;
   text-align: center;
@@ -498,20 +508,59 @@ textarea {
   opacity: 1.5;
 }
 
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  background-color: black;
+}
+
+thead th:nth-child(1) {
+  width: 30%;
+}
+
+thead th:nth-child(2) {
+  width: 20%;
+}
+
+thead th:nth-child(3) {
+  width: 15%;
+}
+
+thead th:nth-child(4) {
+  width: 35%;
+}
+
+th {
+  font-size: 1.2rem;
+  border-bottom: 1px solid #ffffff;
+}
+
+th,
+td {
+  padding: 20px;
+}
+
+tbody td {
+  text-align: center;
+}
+
 .cards {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 1rem;
+  padding-top: 2rem;
 }
 
 .cards__card {
   border: 1px solid black;
-  width: 90%;
-  height: 20rem;
-  background-color: white;
+  width: 70%;
+  height: 22rem;
+  background-color: #f3ecea;
   padding-top: 1rem;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 20px;
 }
 .cards__card:hover .block-cart {
   -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
@@ -526,12 +575,18 @@ textarea {
 }
 
 .card-img {
-  width: 90%;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
   height: 15rem;
-  background-color: red;
+  /*   background-color: red; */
   position: relative;
+}
+.card-img img {
+  width: 80%;
+  height: 15rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .card-texto {
@@ -539,7 +594,13 @@ textarea {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 1rem;
+  padding: 1rem 1rem;
+}
+.card-texto p {
+  font-weight: 700;
+}
+.card-texto strong {
+  font-weight: bold;
 }
 .card-texto p,
 .card-texto strong {
@@ -668,17 +729,15 @@ textarea {
   margin-bottom: 1rem;
 }
 
-.form-loader {
+/* .form-loader {
   width: 5rem;
   height: 5rem;
   margin-bottom: 1rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-.form-loader img {
-  width: 100%;
-}
-
+  @include margin-lat;
+  img {
+    width: 100%;
+  }
+} */
 .msg {
   margin-bottom: 1rem;
   width: 100%;
@@ -701,6 +760,40 @@ textarea {
 }
 .header__logo {
   padding: 0.5em 1em;
+}
+.header__right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.header__right .opciones {
+  margin-right: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__right .opciones .carrito {
+  margin-left: 0.8rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  position: relative;
+}
+.header__right .opciones .cant-carrito {
+  color: white;
+  position: absolute;
+  top: -8px;
+  right: -6px;
+}
+
+.vista_carrito {
+  /*   height: 5rem;
+  width: 10rem; */
+  padding: 1rem 5rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  position: absolute;
+  top: 4rem;
+  right: 0;
 }
 
 .nav {
@@ -749,6 +842,12 @@ textarea {
   transition: all 0.5s ease;
 }
 
+.contenedor {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .imagen-ppal {
   background-image: url(../assets/img/pexels-photo-897271.jpeg);
   background-position: center;
@@ -780,15 +879,24 @@ textarea {
 .general-info {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  -moz-column-gap: 1rem;
-       column-gap: 1rem;
   margin: 1rem 1rem;
 }
 
 .general-info__img {
   /*   margin: 1rem 1rem; */
-  background-color: yellow;
   height: 30rem;
+}
+
+.img1 {
+  background-image: url("../assets/img/barberia-estilo-industrial.webp");
+  background-position: center;
+  background-size: cover;
+}
+
+.img2 {
+  background-image: url("../assets/img/barberia2.jpg");
+  background-position: center;
+  background-size: cover;
 }
 
 .general-info__text {
@@ -840,6 +948,7 @@ textarea {
   right: 1rem;
   bottom: 1rem;
   z-index: 998;
+  fill: white;
 }
 
 .click_citas {
@@ -882,6 +991,56 @@ textarea {
 .border {
   border: 3px solid #ff0000;
   background-color: rgb(202, 198, 197);
+}
+
+.margin {
+  margin-bottom: 1rem;
+}
+
+.list {
+  list-style: circle;
+}
+
+.filter {
+  visibility: hidden;
+  opacity: 0;
+  order: 1;
+}
+
+.icon-tabler-user:hover,
+.icon-tabler-shopping-cart:hover {
+  fill: #ff0000;
+  transition: fill 0.5s ease;
+}
+
+.text-carrito {
+  font-size: 1rem;
+  margin-right: 3rem;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.icon-tabler-trash {
+  cursor: pointer;
+}
+.icon-tabler-trash:hover {
+  fill: #ff0000;
+  transition: fill 0.5s ease;
+}
+
+.form-loader {
+  width: 5rem;
+  height: 5rem;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.form-loader img {
+  width: 100%;
 }
 
 .footer {
@@ -930,6 +1089,9 @@ textarea {
   }
   .cards {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .cards__card {
+    width: 90%;
   }
   .centrar {
     width: 20rem;
@@ -1003,6 +1165,22 @@ textarea {
   }
   .form-sesion {
     width: 50rem;
+  }
+  .header__right {
+    width: 40%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    -moz-column-gap: 0.5rem;
+         column-gap: 0.5rem;
+  }
+  .opciones {
+    width: 10rem;
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .navegacion {
+    grid-column: 1;
+    grid-row: 2;
   }
 }
 @media screen and (min-width: 1024px) {

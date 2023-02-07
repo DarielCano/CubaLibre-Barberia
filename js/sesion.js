@@ -1,18 +1,14 @@
 const d = document;
 const w = window;
 
-import { Usuario } from "./class_functions.js";
+import { menu } from "./menu.js";
+import { scrollTop } from "./scroll.js";
+import { Usuario, leerDatos } from "./class_functions.js";
 
 const datos = new Usuario("", "", "", "", "");
 let sesion;
 
 const $loader = d.querySelector(".form-loader");
-
-const leerDatos = () => {
-  let usuarios = localStorage.getItem("usuarios");
-  console.log(JSON.parse(usuarios));
-  return (usuarios = JSON.parse(usuarios));
-};
 
 const leerTexto = (e) => {
   datos[e.target.id] = e.target.value;
@@ -84,7 +80,7 @@ const mensaje_modal = (nombreUsuario) => {
 
 const enviarDatos = (e) => {
   e.preventDefault();
-  let usuariosStorage = leerDatos();
+  let usuariosStorage = leerDatos("usuarios");
 
   comprobarDatos(usuariosStorage);
 };
@@ -97,3 +93,6 @@ $email.addEventListener("input", leerTexto);
 $password.addEventListener("input", leerTexto);
 
 $formulario.addEventListener("submit", enviarDatos);
+
+menu(".menu-btn", ".nav");
+scrollTop(".header", ".nav");

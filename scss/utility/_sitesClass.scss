@@ -12,6 +12,7 @@
   right: 1rem;
   bottom: 1rem;
   z-index: 998;
+  fill: white;
 }
 
 .click_citas {
@@ -54,4 +55,55 @@
 .border {
   border: 3px solid map-get($colors, red-color);
   background-color: map-get($colors, select-color);
+}
+
+.margin {
+  margin-bottom: 1rem;
+}
+
+.list {
+  list-style: circle;
+}
+
+.filter {
+  visibility: hidden;
+  opacity: 0;
+  order: 1;
+}
+
+.icon-tabler-user,
+.icon-tabler-shopping-cart {
+  &:hover {
+    fill: map-get($colors, red-color);
+    transition: fill 0.5s ease;
+  }
+}
+
+.text-carrito {
+  font-size: 1rem;
+  margin-right: 3rem;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.icon-tabler-trash {
+  cursor: pointer;
+  &:hover {
+    fill: map-get($colors, red-color);
+    transition: fill 0.5s ease;
+  }
+}
+
+.form-loader {
+  width: 5rem;
+  height: 5rem;
+  margin-bottom: 1rem;
+  @include margin-lat;
+  img {
+    width: 100%;
+  }
 }

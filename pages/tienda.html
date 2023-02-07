@@ -1,453 +1,843 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
 
-  <link rel="stylesheet" href="../css/style.css" />
+    <title>Barbería CubaLibre</title>
+  </head>
 
-  <title>Barbería CubaLibre</title>
-</head>
+  <body>
+    <header class="header">
+      <div class="header__logo">Logo</div>
 
-<body>
-  <header class="header">
-    <div class="header__logo">Logo</div>
-
-    <!-- hacer logo de barberia -->
-    <div class="header-right">
-      <button class="menu-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-          <path d="M4 6H20V8H4zM4 11H20V13H4zM4 16H20V18H4z" />
-        </svg>
-        <svg class="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-          <path
-            d="M16.192 6.344L11.949 10.586 7.707 6.344 6.293 7.758 10.535 12 6.293 16.242 7.707 17.656 11.949 13.414 16.192 17.656 17.606 16.242 13.364 12 17.606 7.758z" />
-        </svg>
-      </button>
-      <nav class="nav">
-        <ul class="nav__list">
-          <li><a href="../index.html">Inicio</a></li>
-          <li><a href="./citas.html">Citas</a></li>
-          <li><a class="active-page" href="./tienda.html">Tienda</a></li>
-          <li><a href="./contacto.html">Contáctanos</a></li>
-        </ul>
-    </div>
-  </header>
-  <main>
-    <div class="imagen-ppal-">
-      <div class="imagen-ppal__opacity-">
-        <section class="tienda">
-          <h2>Bienvenido a nuestra tienda</h2>
-          <div class="search">
-            <input type="text" placeholder="Buscar">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="34" height="34"
-              viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round"
-              stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <circle cx="10" cy="10" r="7" />
-              <line x1="21" y1="21" x2="15" y2="15" />
-            </svg>
+      <!-- hacer logo de barberia -->
+      <div class="header__right">
+        <div class="opciones">
+          <div class="inicioSesion">
+            <a href="../pages/sesion.html">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-user"
+                width="30"
+                height="30"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="#ffffff"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <circle cx="12" cy="7" r="4" />
+                <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+              </svg>
+            </a>
           </div>
+          <div class="carrito">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-shopping-cart"
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="#ffffff"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <circle cx="6" cy="19" r="2" />
+              <circle cx="17" cy="19" r="2" />
+              <path d="M17 17h-11v-14h-2" />
+              <path d="M6 5l14 1l-1 7h-13" />
+            </svg>
+            <small class="cant-carrito"></small>
+          </div>
+        </div>
 
-          <article class="cards">
-            <div class="cards__card">
-              <div class="card-img">
-                <!-- agregar imagenes de los productos -->
-                <div class="block-cart">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus" width="34" height="34" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="6" cy="19" r="2" />
-                    <circle cx="17" cy="19" r="2" />
-                    <path d="M17 17h-11v-14h-2" />
-                    <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
-                    <path d="M15 6h6m-3 -3v6" />
-                  </svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-zoom-in" width="34" height="34" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="10" cy="10" r="7" />
-                    <line x1="7" y1="10" x2="13" y2="10" />
-                    <line x1="10" y1="7" x2="10" y2="13" />
-                    <line x1="21" y1="21" x2="15" y2="15" />
-                  </svg>
-                </div>
-              </div>
-              <div class="card-texto">
-                <p class="prod-nombre">Lorem ipsum optus</p>
-                <strong class="prod-precio">$$</strong>
-                           
-              </div>
-            </div>
-
-            <div class="cards__card">
-              <div class="card-img">
-                <!-- agregar imagenes de los productos -->
-                <div class="block-cart">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus" width="34" height="34" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="6" cy="19" r="2" />
-                    <circle cx="17" cy="19" r="2" />
-                    <path d="M17 17h-11v-14h-2" />
-                    <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
-                    <path d="M15 6h6m-3 -3v6" />
-                  </svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-zoom-in" width="34" height="34" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="10" cy="10" r="7" />
-                    <line x1="7" y1="10" x2="13" y2="10" />
-                    <line x1="10" y1="7" x2="10" y2="13" />
-                    <line x1="21" y1="21" x2="15" y2="15" />
-                  </svg>
-                </div>
-              </div>
-              <div class="card-texto">
-                <p class="prod-nombre">Lorem ipsum optus</p>
-                <strong class="prod-precio">$$</strong>
-                           
-              </div>
-            </div>
-
-            <div class="cards__card">
-              <div class="card-img">
-                <!-- agregar imagenes de los productos -->
-                <div class="block-cart">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus" width="34" height="34" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="6" cy="19" r="2" />
-                    <circle cx="17" cy="19" r="2" />
-                    <path d="M17 17h-11v-14h-2" />
-                    <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
-                    <path d="M15 6h6m-3 -3v6" />
-                  </svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-zoom-in" width="34" height="34" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="10" cy="10" r="7" />
-                    <line x1="7" y1="10" x2="13" y2="10" />
-                    <line x1="10" y1="7" x2="10" y2="13" />
-                    <line x1="21" y1="21" x2="15" y2="15" />
-                  </svg>
-                </div>
-              </div>
-              <div class="card-texto">
-                <p class="prod-nombre">Lorem ipsum optus</p>
-                <strong class="prod-precio">$$</strong>
-                           
-              </div>
-            </div>
-
-            <div class="cards__card">
-              <div class="card-img">
-                <!-- agregar imagenes de los productos -->
-                <div class="block-cart">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus" width="34" height="34" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="6" cy="19" r="2" />
-                    <circle cx="17" cy="19" r="2" />
-                    <path d="M17 17h-11v-14h-2" />
-                    <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
-                    <path d="M15 6h6m-3 -3v6" />
-                  </svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-zoom-in" width="34" height="34" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="10" cy="10" r="7" />
-                    <line x1="7" y1="10" x2="13" y2="10" />
-                    <line x1="10" y1="7" x2="10" y2="13" />
-                    <line x1="21" y1="21" x2="15" y2="15" />
-                  </svg>
-                </div>
-              </div>
-              <div class="card-texto">
-                <p class="prod-nombre">Lorem ipsum optus</p>
-                <strong class="prod-precio">$$</strong>
-                           
-              </div>
-            </div>
-
-            <div class="cards__card">
-              <div class="card-img">
-                <!-- agregar imagenes de los productos -->
-                <div class="block-cart">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus" width="34" height="34" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="6" cy="19" r="2" />
-                    <circle cx="17" cy="19" r="2" />
-                    <path d="M17 17h-11v-14h-2" />
-                    <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
-                    <path d="M15 6h6m-3 -3v6" />
-                  </svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-zoom-in" width="34" height="34" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="10" cy="10" r="7" />
-                    <line x1="7" y1="10" x2="13" y2="10" />
-                    <line x1="10" y1="7" x2="10" y2="13" />
-                    <line x1="21" y1="21" x2="15" y2="15" />
-                  </svg>
-                </div>
-              </div>
-              <div class="card-texto">
-                <p class="prod-nombre">Lorem ipsum optus</p>
-                <strong class="prod-precio">$$</strong>
-                           
-              </div>
-            </div>
-
-            <div class="cards__card">
-              <div class="card-img">
-                <!-- agregar imagenes de los productos -->
-                <div class="block-cart">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus" width="34" height="34" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="6" cy="19" r="2" />
-                    <circle cx="17" cy="19" r="2" />
-                    <path d="M17 17h-11v-14h-2" />
-                    <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
-                    <path d="M15 6h6m-3 -3v6" />
-                  </svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-zoom-in" width="34" height="34" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="10" cy="10" r="7" />
-                    <line x1="7" y1="10" x2="13" y2="10" />
-                    <line x1="10" y1="7" x2="10" y2="13" />
-                    <line x1="21" y1="21" x2="15" y2="15" />
-                  </svg>
-                </div>
-              </div>
-              <div class="card-texto">
-                <p class="prod-nombre">Lorem ipsum optus</p>
-                <strong class="prod-precio">$$</strong>
-                           
-              </div>
-            </div>
-
-            <div class="cards__card">
-              <div class="card-img">
-                <!-- agregar imagenes de los productos -->
-                <div class="block-cart">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus" width="34" height="34" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="6" cy="19" r="2" />
-                    <circle cx="17" cy="19" r="2" />
-                    <path d="M17 17h-11v-14h-2" />
-                    <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
-                    <path d="M15 6h6m-3 -3v6" />
-                  </svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-zoom-in" width="34" height="34" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="10" cy="10" r="7" />
-                    <line x1="7" y1="10" x2="13" y2="10" />
-                    <line x1="10" y1="7" x2="10" y2="13" />
-                    <line x1="21" y1="21" x2="15" y2="15" />
-                  </svg>
-                </div>
-              </div>
-              <div class="card-texto">
-                <p class="prod-nombre">Lorem ipsum optus</p>
-                <strong class="prod-precio">$$</strong>
-                           
-              </div>
-            </div>
-
-            <div class="cards__card">
-              <div class="card-img">
-                <!-- agregar imagenes de los productos -->
-                <div class="block-cart">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus" width="34" height="34" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="6" cy="19" r="2" />
-                    <circle cx="17" cy="19" r="2" />
-                    <path d="M17 17h-11v-14h-2" />
-                    <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
-                    <path d="M15 6h6m-3 -3v6" />
-                  </svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-zoom-in" width="34" height="34" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="10" cy="10" r="7" />
-                    <line x1="7" y1="10" x2="13" y2="10" />
-                    <line x1="10" y1="7" x2="10" y2="13" />
-                    <line x1="21" y1="21" x2="15" y2="15" />
-                  </svg>
-                </div>
-              </div>
-              <div class="card-texto">
-                <p class="prod-nombre">Lorem ipsum optus</p>
-                <strong class="prod-precio">$$</strong>
-                           
-              </div>
-            </div>
-
-            <div class="cards__card">
-              <div class="card-img">
-                <!-- agregar imagenes de los productos -->
-                <div class="block-cart">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus" width="34" height="34" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="6" cy="19" r="2" />
-                    <circle cx="17" cy="19" r="2" />
-                    <path d="M17 17h-11v-14h-2" />
-                    <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
-                    <path d="M15 6h6m-3 -3v6" />
-                  </svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-zoom-in" width="34" height="34" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="10" cy="10" r="7" />
-                    <line x1="7" y1="10" x2="13" y2="10" />
-                    <line x1="10" y1="7" x2="10" y2="13" />
-                    <line x1="21" y1="21" x2="15" y2="15" />
-                  </svg>
-                </div>
-              </div>
-              <div class="card-texto">
-                <p class="prod-nombre">Lorem ipsum optus</p>
-                <strong class="prod-precio">$$</strong>
-                           
-              </div>
-            </div>
-
-            <div class="cards__card">
-              <div class="card-img">
-                <!-- agregar imagenes de los productos -->
-                <div class="block-cart">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus" width="34" height="34" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="6" cy="19" r="2" />
-                    <circle cx="17" cy="19" r="2" />
-                    <path d="M17 17h-11v-14h-2" />
-                    <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
-                    <path d="M15 6h6m-3 -3v6" />
-                  </svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-zoom-in" width="34" height="34" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="10" cy="10" r="7" />
-                    <line x1="7" y1="10" x2="13" y2="10" />
-                    <line x1="10" y1="7" x2="10" y2="13" />
-                    <line x1="21" y1="21" x2="15" y2="15" />
-                  </svg>
-                </div>
-              </div>
-              <div class="card-texto">
-                <p class="prod-nombre">Lorem ipsum optus</p>
-                <strong class="prod-precio">$$</strong>
-                           
-              </div>
-            </div>
-
-            <div class="cards__card">
-              <div class="card-img">
-                <!-- agregar imagenes de los productos -->
-                <div class="block-cart">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus" width="34" height="34" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="6" cy="19" r="2" />
-                    <circle cx="17" cy="19" r="2" />
-                    <path d="M17 17h-11v-14h-2" />
-                    <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
-                    <path d="M15 6h6m-3 -3v6" />
-                  </svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-zoom-in" width="34" height="34" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="10" cy="10" r="7" />
-                    <line x1="7" y1="10" x2="13" y2="10" />
-                    <line x1="10" y1="7" x2="10" y2="13" />
-                    <line x1="21" y1="21" x2="15" y2="15" />
-                  </svg>
-                </div>
-              </div>
-              <div class="card-texto">
-                <p class="prod-nombre">Lorem ipsum optus</p>
-                <strong class="prod-precio">$$</strong>
-                           
-              </div>
-            </div>
-
-            <div class="cards__card">
-              <div class="card-img">
-                <!-- agregar imagenes de los productos -->
-                <div class="block-cart">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart-plus" width="34" height="34" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="6" cy="19" r="2" />
-                    <circle cx="17" cy="19" r="2" />
-                    <path d="M17 17h-11v-14h-2" />
-                    <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
-                    <path d="M15 6h6m-3 -3v6" />
-                  </svg>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-zoom-in" width="34" height="34" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <circle cx="10" cy="10" r="7" />
-                    <line x1="7" y1="10" x2="13" y2="10" />
-                    <line x1="10" y1="7" x2="10" y2="13" />
-                    <line x1="21" y1="21" x2="15" y2="15" />
-                  </svg>
-                </div>
-              </div>
-              <div class="card-texto">
-                <p class="prod-nombre">Lorem ipsum optus</p>
-                <strong class="prod-precio">$$</strong>
-                           
-              </div>
-            </div>
-          </article>
-        </section>
+        <div class="navegacion">
+          <button class="menu-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path d="M4 6H20V8H4zM4 11H20V13H4zM4 16H20V18H4z" />
+            </svg>
+            <svg
+              class="none"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M16.192 6.344L11.949 10.586 7.707 6.344 6.293 7.758 10.535 12 6.293 16.242 7.707 17.656 11.949 13.414 16.192 17.656 17.606 16.242 13.364 12 17.606 7.758z"
+              />
+            </svg>
+          </button>
+          <nav class="nav">
+            <ul class="nav__list">
+              <li><a href="../index.html">Inicio</a></li>
+              <li><a href="./citas.html">Citas</a></li>
+              <li><a class="active-page" href="./tienda.html">Tienda</a></li>
+              <li><a href="./contacto.html">Contáctanos</a></li>
+            </ul>
+          </nav>
+        </div>
       </div>
-    </div>
+    </header>
+    <main>
+      <div class="imagen-ppal-">
+        <div class="imagen-ppal__opacity">
+          <section class="tienda">
+            <h2>Bienvenido a nuestra tienda</h2>
+            <div class="search">
+              <input type="text" placeholder="Buscar" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-search"
+                width="34"
+                height="34"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="#ffffff"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <circle cx="10" cy="10" r="7" />
+                <line x1="21" y1="21" x2="15" y2="15" />
+              </svg>
+            </div>
 
-    <div class="logo-wp">
-      <a href="#">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-whatsapp" width="50"
-          height="50" viewBox="0 0 24 24" stroke-width="1" stroke="#00b341" fill="white" stroke-linecap="round"
-          stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
-          <path
-            d="M9 10a0.5 .5 0 0 0 1 0v-1a0.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a0.5 .5 0 0 0 0 -1h-1a0.5 .5 0 0 0 0 1" />
-        </svg>
-      </a>
-    </div>
-  </main>
-  <footer class="footer">
-    <div class="footer__dir">
-      <h3>Puedes encontrarnos en la siguiente dirección</h3>
-      <p><a href="#">Boulevard Euquerio Guerrero km 8</a>, a un costado de la Refaccionaria el Pistón</p>
-    </div>
-    <div class="footer__redes">
-      <a href="#">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="44"
-          height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round"
-          stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
-        </svg>
-      </a>
-      <a href="#">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="44"
-          height="44" viewBox="0 0 24 24" stroke-width="1" stroke="#ffffff" fill="none" stroke-linecap="round"
-          stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <rect x="4" y="4" width="16" height="16" rx="4" />
-          <circle cx="12" cy="12" r="3" />
-          <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
-        </svg>
-      </a>
+            <article class="cards">
+              <div class="cards__card">
+                <div class="card-img">
+                  <img src="../assets/img/1-18-300x300.png" alt="" />
+                  <div class="block-cart">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon icon-tabler icon-tabler-shopping-cart-plus"
+                      width="34"
+                      height="34"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="#ffffff"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <circle cx="6" cy="19" r="2" />
+                      <circle cx="17" cy="19" r="2" />
+                      <path d="M17 17h-11v-14h-2" />
+                      <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
+                      <path d="M15 6h6m-3 -3v6" />
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon icon-tabler icon-tabler-zoom-in"
+                      width="34"
+                      height="34"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="#ffffff"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <circle cx="10" cy="10" r="7" />
+                      <line x1="7" y1="10" x2="13" y2="10" />
+                      <line x1="10" y1="7" x2="10" y2="13" />
+                      <line x1="21" y1="21" x2="15" y2="15" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="card-texto">
+                  <p class="prod-nombre">Aceite pre afeitado</p>
+                  <strong class="prod-precio">$150</strong>
+                </div>
+              </div>
 
-      <a href="#">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-whatsapp" width="44"
-          height="44" viewBox="0 0 24 24" stroke-width="1" stroke="#ffffff" fill="none" stroke-linecap="round"
-          stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
-          <path
-            d="M9 10a0.5 .5 0 0 0 1 0v-1a0.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a0.5 .5 0 0 0 0 -1h-1a0.5 .5 0 0 0 0 1" />
-        </svg>
-      </a>
+              <div class="cards__card">
+                <div class="card-img">
+                  <img src="../assets/img/1-2-300x300.png" alt="" />
+                  <div class="block-cart">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon icon-tabler icon-tabler-shopping-cart-plus"
+                      width="34"
+                      height="34"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="#ffffff"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <circle cx="6" cy="19" r="2" />
+                      <circle cx="17" cy="19" r="2" />
+                      <path d="M17 17h-11v-14h-2" />
+                      <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
+                      <path d="M15 6h6m-3 -3v6" />
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon icon-tabler icon-tabler-zoom-in"
+                      width="34"
+                      height="34"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="#ffffff"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <circle cx="10" cy="10" r="7" />
+                      <line x1="7" y1="10" x2="13" y2="10" />
+                      <line x1="10" y1="7" x2="10" y2="13" />
+                      <line x1="21" y1="21" x2="15" y2="15" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="card-texto">
+                  <p class="prod-nombre">
+                    Bálsamo Para Barba con Acondicionador
+                  </p>
+                  <strong class="prod-precio">$200</strong>
+                </div>
+              </div>
 
-    </div>
-    <div class="footer__derechos">
-      <small> &copy; CubaLibre Barbería. Todos los derechos reservados</small>
-    </div>
-  </footer>
+              <div class="cards__card">
+                <div class="card-img">
+                  <img src="../assets/img/1-12-300x300.png" alt="" />
+                  <div class="block-cart">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon icon-tabler icon-tabler-shopping-cart-plus"
+                      width="34"
+                      height="34"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="#ffffff"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <circle cx="6" cy="19" r="2" />
+                      <circle cx="17" cy="19" r="2" />
+                      <path d="M17 17h-11v-14h-2" />
+                      <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
+                      <path d="M15 6h6m-3 -3v6" />
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon icon-tabler icon-tabler-zoom-in"
+                      width="34"
+                      height="34"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="#ffffff"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <circle cx="10" cy="10" r="7" />
+                      <line x1="7" y1="10" x2="13" y2="10" />
+                      <line x1="10" y1="7" x2="10" y2="13" />
+                      <line x1="21" y1="21" x2="15" y2="15" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="card-texto">
+                  <p class="prod-nombre">Shampoo Normalizador</p>
+                  <strong class="prod-precio">$180</strong>
+                </div>
+              </div>
 
-  <script src="../js/index.js" type="module"></script>
-</body>
+              <div class="cards__card">
+                <div class="card-img">
+                  <img src="../assets/img/1-22-300x300.png" alt="" />
+                  <div class="block-cart">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon icon-tabler icon-tabler-shopping-cart-plus"
+                      width="34"
+                      height="34"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="#ffffff"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <circle cx="6" cy="19" r="2" />
+                      <circle cx="17" cy="19" r="2" />
+                      <path d="M17 17h-11v-14h-2" />
+                      <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
+                      <path d="M15 6h6m-3 -3v6" />
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon icon-tabler icon-tabler-zoom-in"
+                      width="34"
+                      height="34"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="#ffffff"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <circle cx="10" cy="10" r="7" />
+                      <line x1="7" y1="10" x2="13" y2="10" />
+                      <line x1="10" y1="7" x2="10" y2="13" />
+                      <line x1="21" y1="21" x2="15" y2="15" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="card-texto">
+                  <p class="prod-nombre">Bálsamo Hidratante Aftershave</p>
+                  <strong class="prod-precio">$200</strong>
+                </div>
+              </div>
 
+              <div class="cards__card">
+                <div class="card-img">
+                  <img src="../assets/img/1-3-300x300.png" alt="" />
+                  <div class="block-cart">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon icon-tabler icon-tabler-shopping-cart-plus"
+                      width="34"
+                      height="34"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="#ffffff"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <circle cx="6" cy="19" r="2" />
+                      <circle cx="17" cy="19" r="2" />
+                      <path d="M17 17h-11v-14h-2" />
+                      <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
+                      <path d="M15 6h6m-3 -3v6" />
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon icon-tabler icon-tabler-zoom-in"
+                      width="34"
+                      height="34"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="#ffffff"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <circle cx="10" cy="10" r="7" />
+                      <line x1="7" y1="10" x2="13" y2="10" />
+                      <line x1="10" y1="7" x2="10" y2="13" />
+                      <line x1="21" y1="21" x2="15" y2="15" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="card-texto">
+                  <p class="prod-nombre">Arcilla/pomada Modelante</p>
+                  <strong class="prod-precio">$130</strong>
+                </div>
+              </div>
+
+              <div class="cards__card">
+                <div class="card-img">
+                  <img src="../assets/img/1-4-300x300.png" alt="" />
+                  <div class="block-cart">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon icon-tabler icon-tabler-shopping-cart-plus"
+                      width="34"
+                      height="34"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="#ffffff"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <circle cx="6" cy="19" r="2" />
+                      <circle cx="17" cy="19" r="2" />
+                      <path d="M17 17h-11v-14h-2" />
+                      <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
+                      <path d="M15 6h6m-3 -3v6" />
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon icon-tabler icon-tabler-zoom-in"
+                      width="34"
+                      height="34"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="#ffffff"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <circle cx="10" cy="10" r="7" />
+                      <line x1="7" y1="10" x2="13" y2="10" />
+                      <line x1="10" y1="7" x2="10" y2="13" />
+                      <line x1="21" y1="21" x2="15" y2="15" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="card-texto">
+                  <p class="prod-nombre">Crema Para Afeitar, Clubman Pinaud</p>
+                  <strong class="prod-precio">$250</strong>
+                </div>
+              </div>
+
+              <div class="cards__card">
+                <div class="card-img">
+                  <img src="../assets/img/1-9-300x300.png" alt="" />
+                  <div class="block-cart">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon icon-tabler icon-tabler-shopping-cart-plus"
+                      width="34"
+                      height="34"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="#ffffff"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <circle cx="6" cy="19" r="2" />
+                      <circle cx="17" cy="19" r="2" />
+                      <path d="M17 17h-11v-14h-2" />
+                      <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
+                      <path d="M15 6h6m-3 -3v6" />
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon icon-tabler icon-tabler-zoom-in"
+                      width="34"
+                      height="34"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="#ffffff"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <circle cx="10" cy="10" r="7" />
+                      <line x1="7" y1="10" x2="13" y2="10" />
+                      <line x1="10" y1="7" x2="10" y2="13" />
+                      <line x1="21" y1="21" x2="15" y2="15" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="card-texto">
+                  <p class="prod-nombre">Shampoo Normalizador 250ml</p>
+                  <strong class="prod-precio">$200</strong>
+                </div>
+              </div>
+
+              <div class="cards__card">
+                <div class="card-img">
+                  <img
+                    src="../assets/img/1-e1665706997660-300x300.png"
+                    alt=""
+                  />
+                  <div class="block-cart">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon icon-tabler icon-tabler-shopping-cart-plus"
+                      width="34"
+                      height="34"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="#ffffff"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <circle cx="6" cy="19" r="2" />
+                      <circle cx="17" cy="19" r="2" />
+                      <path d="M17 17h-11v-14h-2" />
+                      <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
+                      <path d="M15 6h6m-3 -3v6" />
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon icon-tabler icon-tabler-zoom-in"
+                      width="34"
+                      height="34"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="#ffffff"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <circle cx="10" cy="10" r="7" />
+                      <line x1="7" y1="10" x2="13" y2="10" />
+                      <line x1="10" y1="7" x2="10" y2="13" />
+                      <line x1="21" y1="21" x2="15" y2="15" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="card-texto">
+                  <p class="prod-nombre">Espuma Para Afeitar, Clubman Pinaud</p>
+                  <strong class="prod-precio">$150</strong>
+                </div>
+              </div>
+
+              <div class="cards__card">
+                <div class="card-img">
+                  <img src="../assets/img/2-2-300x300.png" alt="" />
+                  <div class="block-cart">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon icon-tabler icon-tabler-shopping-cart-plus"
+                      width="34"
+                      height="34"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="#ffffff"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <circle cx="6" cy="19" r="2" />
+                      <circle cx="17" cy="19" r="2" />
+                      <path d="M17 17h-11v-14h-2" />
+                      <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
+                      <path d="M15 6h6m-3 -3v6" />
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon icon-tabler icon-tabler-zoom-in"
+                      width="34"
+                      height="34"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="#ffffff"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <circle cx="10" cy="10" r="7" />
+                      <line x1="7" y1="10" x2="13" y2="10" />
+                      <line x1="10" y1="7" x2="10" y2="13" />
+                      <line x1="21" y1="21" x2="15" y2="15" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="card-texto">
+                  <p class="prod-nombre">
+                    Kit 3 En 1, Clubman Pinaud, (aceite, bálsamo,
+                    acondicionador)
+                  </p>
+                  <strong class="prod-precio">$280</strong>
+                </div>
+              </div>
+
+              <div class="cards__card">
+                <div class="card-img">
+                  <img src="../assets/img/3-3-300x300.png" alt="" />
+                  <div class="block-cart">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon icon-tabler icon-tabler-shopping-cart-plus"
+                      width="34"
+                      height="34"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="#ffffff"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <circle cx="6" cy="19" r="2" />
+                      <circle cx="17" cy="19" r="2" />
+                      <path d="M17 17h-11v-14h-2" />
+                      <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
+                      <path d="M15 6h6m-3 -3v6" />
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon icon-tabler icon-tabler-zoom-in"
+                      width="34"
+                      height="34"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="#ffffff"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <circle cx="10" cy="10" r="7" />
+                      <line x1="7" y1="10" x2="13" y2="10" />
+                      <line x1="10" y1="7" x2="10" y2="13" />
+                      <line x1="21" y1="21" x2="15" y2="15" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="card-texto">
+                  <p class="prod-nombre">Aceite para barba</p>
+                  <strong class="prod-precio">$90</strong>
+                </div>
+              </div>
+
+              <div class="cards__card">
+                <div class="card-img">
+                  <img src="../assets/img/4-300x300.png" alt="" />
+                  <div class="block-cart">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon icon-tabler icon-tabler-shopping-cart-plus"
+                      width="34"
+                      height="34"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="#ffffff"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <circle cx="6" cy="19" r="2" />
+                      <circle cx="17" cy="19" r="2" />
+                      <path d="M17 17h-11v-14h-2" />
+                      <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
+                      <path d="M15 6h6m-3 -3v6" />
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon icon-tabler icon-tabler-zoom-in"
+                      width="34"
+                      height="34"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="#ffffff"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <circle cx="10" cy="10" r="7" />
+                      <line x1="7" y1="10" x2="13" y2="10" />
+                      <line x1="10" y1="7" x2="10" y2="13" />
+                      <line x1="21" y1="21" x2="15" y2="15" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="card-texto">
+                  <p class="prod-nombre">Bálsamo Para Barba Aroma Cítricos</p>
+                  <strong class="prod-precio">$160</strong>
+                </div>
+              </div>
+
+              <div class="cards__card">
+                <div class="card-img">
+                  <img src="../assets/img/A-2-300x300.png" alt="" />
+                  <div class="block-cart">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon icon-tabler icon-tabler-shopping-cart-plus"
+                      width="34"
+                      height="34"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="#ffffff"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <circle cx="6" cy="19" r="2" />
+                      <circle cx="17" cy="19" r="2" />
+                      <path d="M17 17h-11v-14h-2" />
+                      <path d="M6 5l6.005 .429m7.138 6.573l-.143 .998h-13" />
+                      <path d="M15 6h6m-3 -3v6" />
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="icon icon-tabler icon-tabler-zoom-in"
+                      width="34"
+                      height="34"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="#ffffff"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <circle cx="10" cy="10" r="7" />
+                      <line x1="7" y1="10" x2="13" y2="10" />
+                      <line x1="10" y1="7" x2="10" y2="13" />
+                      <line x1="21" y1="21" x2="15" y2="15" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="card-texto">
+                  <p class="prod-nombre">Aceite Para Barba Aroma Maderas</p>
+                  <strong class="prod-precio">$120</strong>
+                </div>
+              </div>
+            </article>
+          </section>
+        </div>
+      </div>
+
+      <div class="logo-wp">
+        <a href="https://web.whatsapp.com/">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-brand-whatsapp"
+            width="50"
+            height="50"
+            viewBox="0 0 24 24"
+            stroke-width="1"
+            stroke="#00b341"
+            fill="white"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+            <path
+              d="M9 10a0.5 .5 0 0 0 1 0v-1a0.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a0.5 .5 0 0 0 0 -1h-1a0.5 .5 0 0 0 0 1"
+            />
+          </svg>
+        </a>
+      </div>
+
+      <div class="vista_carrito opacity">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Producto</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">-----</th>
+            </tr>
+          </thead>
+          <tbody id="table-content"></tbody>
+        </table>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer__dir">
+        <h3>Puedes encontrarnos en la siguiente dirección</h3>
+        <p>
+          <a href="#">Boulevard Euquerio Guerrero km 8</a>, a un costado de la
+          Refaccionaria el Pistón
+        </p>
+      </div>
+      <div class="footer__redes">
+        <a href="#">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-brand-facebook"
+            width="44"
+            height="44"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="#ffffff"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"
+            />
+          </svg>
+        </a>
+        <a href="#">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-brand-instagram"
+            width="44"
+            height="44"
+            viewBox="0 0 24 24"
+            stroke-width="1"
+            stroke="#ffffff"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <rect x="4" y="4" width="16" height="16" rx="4" />
+            <circle cx="12" cy="12" r="3" />
+            <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
+          </svg>
+        </a>
+
+        <a href="#">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-brand-whatsapp"
+            width="44"
+            height="44"
+            viewBox="0 0 24 24"
+            stroke-width="1"
+            stroke="#ffffff"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+            <path
+              d="M9 10a0.5 .5 0 0 0 1 0v-1a0.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a0.5 .5 0 0 0 0 -1h-1a0.5 .5 0 0 0 0 1"
+            />
+          </svg>
+        </a>
+      </div>
+      <div class="footer__derechos">
+        <small> &copy; CubaLibre Barbería. Todos los derechos reservados</small>
+      </div>
+    </footer>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script src="../js/tienda.js" type="module"></script>
+  </body>
 </html>

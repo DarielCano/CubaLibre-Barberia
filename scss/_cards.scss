@@ -2,16 +2,17 @@
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 1rem;
+  padding-top: 2rem;
 }
 
 .cards__card {
   border: 1px solid black;
-  width: 90%;
-  height: 20rem;
-  background-color: white;
+  width: 70%;
+  height: 22rem;
+  background-color: #f3ecea;
   padding-top: 1rem;
   @include margin-lat;
-
+  border-radius: 20px;
   &:hover {
     .block-cart {
       clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
@@ -26,12 +27,17 @@
 }
 
 .card-img {
-  width: 90%;
+  width: 80%;
   @include margin-lat;
   height: 15rem;
 
-  background-color: red;
+  /*   background-color: red; */
   position: relative;
+  img {
+    width: 80%;
+    height: 15rem;
+    @include margin-lat;
+  }
 }
 
 .card-texto {
@@ -39,8 +45,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 1rem;
+  padding: 1rem 1rem;
 
+  p {
+    font-weight: 700;
+  }
+  strong {
+    font-weight: bold;
+  }
   p,
   strong {
     text-align: center;

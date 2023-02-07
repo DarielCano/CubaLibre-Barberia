@@ -5,6 +5,7 @@
   width: 100%;
   position: relative;
   h2 {
+    font-size: 2rem;
     color: map-get($colors, white-color);
 
     padding-bottom: 1rem;
@@ -47,4 +48,39 @@
       opacity: 1.5;
     }
   }
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  background-color: black;
+}
+
+thead th:nth-child(1) {
+  width: 30%;
+}
+
+thead th:nth-child(2) {
+  width: 20%;
+}
+
+thead th:nth-child(3) {
+  width: 15%;
+}
+
+thead th:nth-child(4) {
+  width: 35%;
+}
+
+th {
+  font-size: 1.2rem;
+  border-bottom: 1px solid map-get($colors, white-color);
+}
+th,
+td {
+  padding: 20px;
+}
+tbody td {
+  text-align: center;
 }

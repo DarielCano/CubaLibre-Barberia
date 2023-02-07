@@ -1,210 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-  <link rel="stylesheet" href="../css/style.css" />
+    <title>Barbería CubaLibre</title>
+  </head>
 
-  <title>Barbería CubaLibre</title>
-</head>
+  <body>
+    <header class="header">
+      <div class="header__logo">Logo</div>
 
-<body>
-  <header class="header">
-    <div class="header__logo">Logo</div>
-
-    <!-- hacer logo de barberia -->
-    <div class="header-right">
-      <button class="menu-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-          <path d="M4 6H20V8H4zM4 11H20V13H4zM4 16H20V18H4z" />
-        </svg>
-        <svg class="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-          <path
-            d="M16.192 6.344L11.949 10.586 7.707 6.344 6.293 7.758 10.535 12 6.293 16.242 7.707 17.656 11.949 13.414 16.192 17.656 17.606 16.242 13.364 12 17.606 7.758z" />
-        </svg>
-      </button>
-      <nav class="nav">
-        <ul class="nav__list">
-          <li><a href="../index.html">Inicio</a></li>
-          <li><a class="active-page" href="./citas.html">Citas</a></li>
-          <li><a href="./tienda.html">Tienda</a></li>
-          <li><a href="./contacto.html">Contáctanos</a></li>
-        </ul>
-    </div>
-  </header>
-  <main class=>
-
-    <section class="imagen-ppal">
-      <div class="imagen-ppal__opacity">
-        <article class="contenedor-cita">
-
-          <div class="cita-encabezado">
-            <h1 class="crear-cita">Crear nueva cita</h1>
-            <p class="texto-cita">Elige tus servicios y coloca tus datos</p>
+      <!-- hacer logo de barberia -->
+      <div class="header__right">
+        <div class="opciones">
+          <div class="inicioSesion">
+            <a href="../pages/sesion.html">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-user"
+                width="30"
+                height="30"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="#ffffff"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <circle cx="12" cy="7" r="4" />
+                <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+              </svg>
+            </a>
           </div>
-          <div class="usuario-citas">
-             <h3 class="usuario"> <!-- Se llena con el nombre de usuario --></h3> 
-            <a href="./sesion.html" class="usuario-sesion">Cerrar Sesión</a>
+          <div class="carrito">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-shopping-cart"
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="#ffffff"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <circle cx="6" cy="19" r="2" />
+              <circle cx="17" cy="19" r="2" />
+              <path d="M17 17h-11v-14h-2" />
+              <path d="M6 5l14 1l-1 7h-13" />
+            </svg>
+            <small class="cant-carrito"></small>
           </div>
-          <div class="cita-selector">
-            <ul>
-              <li class=" selector click-servicios "><button class="color-white sel1">Servicios</button></li>
-              <li  class=" selector "><button class="sel2">Información cita</button></li>
-              <li  class="selector" ><button class="sel3">Resumen</button></li>
+        </div>
+
+        <div class="navegacion">
+          <button class="menu-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path d="M4 6H20V8H4zM4 11H20V13H4zM4 16H20V18H4z" />
+            </svg>
+            <svg
+              class="none"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M16.192 6.344L11.949 10.586 7.707 6.344 6.293 7.758 10.535 12 6.293 16.242 7.707 17.656 11.949 13.414 16.192 17.656 17.606 16.242 13.364 12 17.606 7.758z"
+              />
+            </svg>
+          </button>
+          <nav class="nav">
+            <ul class="nav__list">
+              <li><a href="../index.html">Inicio</a></li>
+              <li><a class="active-page" href="./citas.html">Citas</a></li>
+              <li><a href="./tienda.html">Tienda</a></li>
+              <li><a href="./contacto.html">Contáctanos</a></li>
             </ul>
-          </div>
-
-          <div class="contenedor-cita__servicios   ">
-            <h2>Servicios</h2>
-            <p>Elige tus servicios a continuación</p>
-            <div class="bloque-servicios">
-              <div class="bloque-servicios__servicio">
-                <h3 class=" corte corte1">Corte de cabello sencillo Niño</h3>
-                <strong class="precio precio1">$100</strong>
-              </div>
-              <div class="bloque-servicios__servicio">
-                <h3 class="">Corte de cabello sencillo Hombre</h3>
-                <strong class="">$130</strong>
-              </div>
-              <div class="bloque-servicios__servicio">
-                <h3>Corte de cabello Niño (Fade)</h3>
-                <strong>$110</strong>
-              </div>
-              <div class="bloque-servicios__servicio">
-                <h3>Corte de cabello Hombre (Fade)</h3>
-                <strong>$150</strong>
-              </div>
-              <div class="bloque-servicios__servicio">
-                <h3>Corte de cabello Hombre (Fade)</h3>
-                <strong>$150</strong>
-              </div>
-              <div class="bloque-servicios__servicio">
-                <h3>Corte de cabello y Barba</h3>
-                <strong>$250</strong>
-              </div>
-              <div class="bloque-servicios__servicio">
-                <h3>Ritual de Toalla Caliente</h3>
-                <strong>$350</strong>
-              </div>
-              <div class="bloque-servicios__servicio">
-                <h3>Depilado de Cejas</h3>
-                <strong>$20</strong>
-              </div>
-              <div class="bloque-servicios__servicio">
-                <h3>Diseño de Grecas</h3>
-                <strong>$20 - $100 (Según complejidad)</strong>
-              </div>
-            </div>
-          </div>
-
-          <div class="contenedor-cita__info-cita none">
-            <h2>Tus Datos y Cita</h2>
-            <p>Coloca tus datos y fecha de tu cita</p>
-            <div class="cita-nombre">
-              <label for="nombre">Nombre</label>
-              <input type="text" name="nombre" id="nombre">
-            </div>
-
-            <div class="cita-fecha">
-              <label for="fecha">Fecha</label>
-              <input type="date" name="fecha" id="fecha">
-            </div>
-
-            <div class="cita-hora">
-              <label for="hora">Hora</label>
-              <input type="time" name="hora" id="nombre">
-            </div>
-
-            <div class="info-cita_btn">
-              <button class="cita-btn">Anterior</button>
-              <button class="cita-btn">Siguiente</button>
-            </div>
-
-          </div>
-
-          <div class="contenedor-cita__resumen none">
-            <div class="resumen-servicios">
-              <h2>Resumen de Servicios</h2>
-            </div>
-            <div class="resumen-cita">
-              <h2>Resumen de Cita</h2>
-            </div>
-            <div class="resumen-btn">
-              <input class="cita-btn" type="submit" value="Reservar">
-              <button class="cita-btn">Anterior</button>
-            </div>
-
-          </div>
-        </article>
+          </nav>
+        </div>
       </div>
-    </section>
+    </header>
+    <main class="contenedor">
+      <section class="imagen-ppal">
+        <div class="imagen-ppal__opacity">
+          <article class="contenedor-cita">
+            <div class="cita-encabezado">
+              <h1 class="crear-cita">Crear nueva cita</h1>
+              <p class="texto-cita">Elige tus servicios y coloca tus datos</p>
+            </div>
+            <div class="usuario-citas">
+              <h3 class="usuario"></h3>
+              <a class="usuario-sesion">Cerrar Sesión</a>
+            </div>
+            <div class="cita-selector">
+              <ul>
+                <li class="selector click-servicios">
+                  <button class="color-white sel1">Servicios</button>
+                </li>
+                <li class="selector">
+                  <button class="sel2">Información cita</button>
+                </li>
+                <li class="selector"><button class="sel3">Resumen</button></li>
+              </ul>
+            </div>
 
+            <div class="contenedor-cita__servicios">
+              <h2>Servicios</h2>
+              <p>Elige tus servicios a continuación</p>
+              <div class="bloque-servicios">
+                <div class="bloque-servicios__servicio bloque1">
+                  <h3 class="corte corte1">Corte de cabello sencillo Niño</h3>
+                  <strong class="precio precio1">$100</strong>
+                </div>
+                <div class="bloque-servicios__servicio bloque2">
+                  <h3 class="">Corte de cabello sencillo Hombre</h3>
+                  <strong class="">$130</strong>
+                </div>
+                <div class="bloque-servicios__servicio bloque3">
+                  <h3>Corte de cabello Niño (Fade)</h3>
+                  <strong>$110</strong>
+                </div>
+                <div class="bloque-servicios__servicio bloque4">
+                  <h3>Corte de cabello Hombre (Fade)</h3>
+                  <strong>$150</strong>
+                </div>
+                <div class="bloque-servicios__servicio bloque5">
+                  <h3>Corte de cabello Hombre (Fade)</h3>
+                  <strong>$150</strong>
+                </div>
+                <div class="bloque-servicios__servicio bloque6">
+                  <h3>Corte de cabello y Barba</h3>
+                  <strong>$250</strong>
+                </div>
+                <div class="bloque-servicios__servicio bloque7">
+                  <h3>Ritual de Toalla Caliente</h3>
+                  <strong>$350</strong>
+                </div>
+                <div class="bloque-servicios__servicio bloque8">
+                  <h3>Depilado de Cejas</h3>
+                  <strong>$20</strong>
+                </div>
+                <div class="bloque-servicios__servicio bloque9">
+                  <h3>Diseño de Grecas</h3>
+                  <strong>$20 - $100 (Según complejidad)</strong>
+                </div>
+              </div>
+            </div>
 
+            <div class="contenedor-cita__info-cita none">
+              <h2>Tus Datos y Cita</h2>
+              <p>Coloca tus datos y fecha de tu cita</p>
+              <div class="cita-nombre">
+                <label for="nombre_cita">Nombre</label>
+                <input type="text" name="nombre_cita" id="nombre_cita" />
+              </div>
 
+              <div class="cita-fecha">
+                <label for="fecha_cita">Fecha</label>
+                <input type="date" name="fecha_cita" id="fecha_cita" required />
+              </div>
 
+              <div class="cita-hora">
+                <label for="hora_cita">Hora</label>
+                <input
+                  type="time"
+                  name="hora_cita"
+                  id="hora_cita"
+                  required
+                  min="T13:00"
+                  max="T21:00"
+                />
+              </div>
 
+              <div class="info-cita_btn">
+                <button class="cita-btn anterior_cita">Anterior</button>
+                <button class="cita-btn sgte_cita">Siguiente</button>
+              </div>
+            </div>
 
+            <div class="contenedor-cita__resumen none">
+              <div class="resumen-servicios">
+                <h2>Resumen de Servicios</h2>
+              </div>
+              <div class="resumen-cita">
+                <h2>Resumen de Cita</h2>
+              </div>
+              <div class="resumen-btn">
+                <input
+                  class="cita-btn reservar-cita"
+                  type="submit"
+                  value="Reservar"
+                />
+                <button class="cita-btn anterior_resumen">Anterior</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
 
-    <div class="logo-wp">
-      <a href="#">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-whatsapp" width="50"
-          height="50" viewBox="0 0 24 24" stroke-width="1" stroke="#00b341" fill="none" stroke-linecap="round"
-          stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
-          <path
-            d="M9 10a0.5 .5 0 0 0 1 0v-1a0.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a0.5 .5 0 0 0 0 -1h-1a0.5 .5 0 0 0 0 1" />
-        </svg>
-      </a>
-    </div>
+      <div class="logo-wp">
+        <a href="https://web.whatsapp.com/">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-brand-whatsapp"
+            width="50"
+            height="50"
+            viewBox="0 0 24 24"
+            stroke-width="1"
+            stroke="#00b341"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+            <path
+              d="M9 10a0.5 .5 0 0 0 1 0v-1a0.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a0.5 .5 0 0 0 0 -1h-1a0.5 .5 0 0 0 0 1"
+            />
+          </svg>
+        </a>
+      </div>
+      <div class="vista_carrito opacity">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Producto</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">-----</th>
+            </tr>
+          </thead>
+          <tbody id="table-content"></tbody>
+        </table>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer__dir">
+        <h3>Puedes encontrarnos en la siguiente dirección</h3>
+        <p>
+          <a href="#">Boulevard Euquerio Guerrero km 8</a>, a un costado de la
+          Refaccionaria el Pistón
+        </p>
+      </div>
+      <div class="footer__redes">
+        <a href="#">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-brand-facebook"
+            width="44"
+            height="44"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="#ffffff"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"
+            />
+          </svg>
+        </a>
+        <a href="#">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-brand-instagram"
+            width="44"
+            height="44"
+            viewBox="0 0 24 24"
+            stroke-width="1"
+            stroke="#ffffff"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <rect x="4" y="4" width="16" height="16" rx="4" />
+            <circle cx="12" cy="12" r="3" />
+            <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
+          </svg>
+        </a>
 
-  </main>
-  <footer class="footer">
-    <div class="footer__dir">
-      <h3>Puedes encontrarnos en la siguiente dirección</h3>
-      <p><a href="#">Boulevard Euquerio Guerrero km 8</a>, a un costado de la Refaccionaria el Pistón</p>
-    </div>
-    <div class="footer__redes">
-      <a href="#">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="44"
-          height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round"
-          stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
-        </svg>
-      </a>
-      <a href="#">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="44"
-          height="44" viewBox="0 0 24 24" stroke-width="1" stroke="#ffffff" fill="none" stroke-linecap="round"
-          stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <rect x="4" y="4" width="16" height="16" rx="4" />
-          <circle cx="12" cy="12" r="3" />
-          <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
-        </svg>
-      </a>
+        <a href="#">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-brand-whatsapp"
+            width="44"
+            height="44"
+            viewBox="0 0 24 24"
+            stroke-width="1"
+            stroke="#ffffff"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+            <path
+              d="M9 10a0.5 .5 0 0 0 1 0v-1a0.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a0.5 .5 0 0 0 0 -1h-1a0.5 .5 0 0 0 0 1"
+            />
+          </svg>
+        </a>
+      </div>
+      <div class="footer__derechos">
+        <small> &copy; CubaLibre Barbería. Todos los derechos reservados</small>
+      </div>
+    </footer>
 
-      <a href="#">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-whatsapp" width="44"
-          height="44" viewBox="0 0 24 24" stroke-width="1" stroke="#ffffff" fill="none" stroke-linecap="round"
-          stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
-          <path
-            d="M9 10a0.5 .5 0 0 0 1 0v-1a0.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a0.5 .5 0 0 0 0 -1h-1a0.5 .5 0 0 0 0 1" />
-        </svg>
-      </a>
-
-    </div>
-    <div class="footer__derechos">
-      <small> &copy; CubaLibre Barbería. Todos los derechos reservados</small>
-    </div>
-  </footer>
-
-  <script src="../js/index.js" type="module"></script>
-</body>
-
+    <script src="sweetalert2.all.min.js"></script>
+    <script src="../js/citas.js" type="module"></script>
+  </body>
 </html>
