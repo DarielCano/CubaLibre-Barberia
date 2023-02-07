@@ -83,7 +83,7 @@ const comprobarDatosRegistro = (datos) => {
 
 const enviarDatos = (e) => {
   e.preventDefault();
-  if (localStorage.length == 0) {
+  if (localStorage.length == 0 || !localStorage.getItem("usuarios")) {
     users.push(datosUser);
     let usersString = JSON.stringify(users);
     localStorage.setItem("usuarios", usersString);
