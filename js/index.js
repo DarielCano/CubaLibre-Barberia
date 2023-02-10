@@ -3,9 +3,16 @@ const w = window;
 
 import { menu } from "./menu.js";
 import { scrollTop } from "./scroll.js";
+import { usuarioLogin } from "./loginUsuario.js";
+import { carrito } from "./carrito.js";
+
+usuarioLogin("./pages/sesion.html");
+carrito(".cant-carrito", ".carrito", ".vista_carrito", ".table-cont");
+
+//////////////////////////////////////////////////////////////////////////////////////////////
 
 let $enlaces = d.querySelectorAll(".link");
-console.log($enlaces);
+
 $enlaces.forEach((enlace) => {
   enlace.addEventListener("click", (e) => {
     if (sessionStorage.getItem("sesion") == null) {

@@ -1,24 +1,49 @@
 const d = document;
 const w = window;
 import { menu } from "./menu.js";
+import { usuarioLogin } from "./loginUsuario.js";
 import {
-  leerDatos,
   Usuario_barberia,
-  Usuario,
-  getData,
   inicioSesion,
   setData,
+  getData,
 } from "./class_functions.js";
-import { renderCarrito, usuarioTienda, $cantCarrrito } from "./tienda.js";
-menu(".menu-btn", ".nav");
 
-const $usuarioCitas = d.querySelector(".usuario");
+import { carrito } from "./carrito.js";
+
+usuarioLogin("./sesion.html");
+carrito(".cant-carrito", ".carrito", ".vista_carrito", ".table-cont");
+
+menu(".menu-btn", ".nav");
 
 /* OBJETOS SERVICIO Y DATOS USUARIO PARA CITAS */
 const datosUsuario = {
   fecha_cita: "",
   hora_cita: "",
 };
+/* CARGAR DATOS DE USUARIO Q INICIO SESION */
+
+let datos = inicioSesion("usuarioSesion");
+let usuario = getData("usuario_cita");
+const usuarioBarber = !usuario
+  ? new Usuario_barberia(
+      datos.nombre,
+      datos.apellido,
+      datos.telefono,
+      datos.email,
+      datos.contraseña,
+      [],
+      datosUsuario
+    )
+  : new Usuario_barberia(
+      usuario.nombre,
+      usuario.apellido,
+      usuario.telefono,
+      usuario.email,
+      usuario.contraseña,
+      usuario.servicios,
+      usuario.datosUsuario
+    );
 
 /* SELECTORES */
 let $selector1 = d.querySelector(".sel1");
@@ -30,8 +55,23 @@ let $servicios = d.querySelector(".contenedor-cita__servicios");
 let $info = d.querySelector(".contenedor-cita__info-cita");
 let $resumen = d.querySelector(".contenedor-cita__resumen");
 
+const $usuarioCitas = d.querySelector(".usuario");
+const $cerrarSesion = d.querySelector(".usuario-sesion");
+
 /* BLOQUES DE SERVICIOS */
 let $bloquesServ = d.querySelectorAll(".bloque-servicios__servicio");
+
+/* INFO CITA */
+let $nombre = d.getElementById("nombre_cita");
+let $fecha = d.getElementById("fecha_cita");
+let $hora = d.getElementById("hora_cita");
+let $btnAnteriorCita = d.querySelector(".anterior_cita");
+let $btnSiguienteCita = d.querySelector(".sgte_cita");
+let $btnAnteriorResumen = d.querySelector(".anterior_resumen");
+let $btnReservarCita = d.querySelector(".reservar-cita");
+
+let $resumenServicios = d.querySelector(".resumen-servicios");
+let $resumenCita = d.querySelector(".resumen-cita");
 
 /////////////////////////////////////////////////////////////////////
 const addClase = (sel) => {
@@ -45,24 +85,39 @@ const borrarCLase = (sel) => {
 
 ///////////////////////////////////////////////////////////////////////////
 
-/* CARGAR DATOS DE USUARIO Q INICIO SESION */
-let datos = inicioSesion("usuarioSesion");
-const usuarioBarber =
-  datos == false
-    ? new Usuario_barberia("", "", "", "", "", [], {})
-    : new Usuario_barberia(
-        datos.nombre,
-        datos.apellido,
-        datos.telefono,
-        datos.email,
-        datos.contraseña,
-        [],
-        datosUsuario
-      );
+/* ESTA FUNCION ACTUALIZA LOS SERVICIOS GUARDADOS UNA VEZ HECHA LA RESERVA(OPRIMIENDO EL BOTON RESERVAR). SI NO
+SE HACE ASI, SE QUEDAN LOS VALORES PREVIAMENTE GUARDADOS */
+const renderCita = () => {
+  let reservado = getData("reservado");
+  if (reservado == true) {
+  }
 
+  $bloquesServ.forEach((el) => {
+    if (
+      usuarioBarber.servicios.findIndex(
+        (value) => value.nombre == el.firstElementChild.textContent
+      ) != -1
+    )
+      el.classList.add("border");
+  });
+  $usuarioCitas.textContent = ` ${usuarioBarber.nombre} ` || ``;
+  $nombre.value = `${usuarioBarber.nombre} ${usuarioBarber.apellido}`;
+
+  let stringServicios = usuarioBarber.mostrarServicios();
+  $resumenServicios.innerHTML = `<h2 class="margin"> Resumen Servicios</h2>
+                              <ul class="color-white" >${stringServicios}</ul>`;
+  $resumenCita.innerHTML = `<h2 class="margin " > Resumen Cita</h2>
+                            <h4 class="color-white margin"> FECHA: ${usuarioBarber.datosUsuario.fecha_cita}</h4>
+                            <h4 class="color-white mrgin"> HORA: ${usuarioBarber.datosUsuario.hora_cita}</h4>`;
+};
+
+renderCita();
 ///////////////////////////////////////////////////////////////////////////////
 
-$usuarioCitas.textContent = ` ${usuarioBarber.nombre} ` || ``;
+$cerrarSesion.addEventListener("click", (e) => {
+  sessionStorage.removeItem("sesion");
+  location.href = "../index.html";
+});
 
 d.addEventListener("click", (e) => {
   if (e.target.matches(".sel1")) {
@@ -80,6 +135,24 @@ d.addEventListener("click", (e) => {
     $info.classList.remove("none");
     $resumen.classList.add("none");
   } else if (e.target.matches(".sel3")) {
+    if (
+      usuarioBarber.datosUsuario.fecha_cita ||
+      usuarioBarber.datosUsuario.hora_cita
+    ) {
+      let stringServicios = usuarioBarber.mostrarServicios();
+      $resumenServicios.innerHTML = `<h2 class="margin"> Resumen Servicios</h2>
+                                  <ul class="color-white" >${stringServicios}</ul>`;
+      $resumenCita.innerHTML = `<h2 class="margin " > Resumen Cita</h2>
+                                <h4 class="color-white margin"> FECHA: ${usuarioBarber.datosUsuario.fecha_cita}</h4>
+                                <h4 class="color-white mrgin"> HORA: ${usuarioBarber.datosUsuario.hora_cita}</h4>`;
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "FALLO EN CITA",
+        text: "Debe llenar los campos servicios, fecha y hora para agendar cita",
+      });
+    }
+
     addClase($selector3);
     borrarCLase($selector2);
     borrarCLase($selector1);
@@ -99,7 +172,7 @@ $bloquesServ.forEach((elemento) => {
 
     servicio.nombre = elemento.firstElementChild.textContent;
     servicio.precio = elemento.lastElementChild.textContent;
-    console.log(usuarioBarber.servicios);
+    console.log(usuarioBarber);
     if (
       usuarioBarber.servicios.findIndex((v) => v.nombre == servicio.nombre) ==
       -1
@@ -110,31 +183,21 @@ $bloquesServ.forEach((elemento) => {
       elemento.classList.remove("border");
       usuarioBarber.eliminarServicio(servicio);
     }
+    setData("usuario_cita", usuarioBarber);
   });
 });
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 /* INFORMACION CITA */
 
-let $nombre = d.getElementById("nombre_cita");
-let $fecha = d.getElementById("fecha_cita");
-let $hora = d.getElementById("hora_cita");
-let $btnAnteriorCita = d.querySelector(".anterior_cita");
-let $btnSiguienteCita = d.querySelector(".sgte_cita");
-let $btnAnteriorResumen = d.querySelector(".anterior_resumen");
-let $btnReservarCita = d.querySelector(".reservar-cita");
-
-let $resumenServicios = d.querySelector(".resumen-servicios");
-let $resumenCita = d.querySelector(".resumen-cita");
-
-console.log($nombre.value);
-$nombre.value = `${usuarioBarber.nombre} ${usuarioBarber.apellido}`;
 $fecha.addEventListener("input", (e) => {
-  datosUsuario[e.target.id] = e.target.value;
-  console.log(datosUsuario.fecha_cita);
+  usuarioBarber.datosUsuario[e.target.id] = e.target.value;
+  setData("usuario_cita", usuarioBarber);
+  console.log($fecha.value);
 });
 $hora.addEventListener("input", (e) => {
-  datosUsuario[e.target.id] = e.target.value;
+  usuarioBarber.datosUsuario[e.target.id] = e.target.value;
+  setData("usuario_cita", usuarioBarber);
 });
 
 $btnAnteriorCita.addEventListener("click", (e) => {
@@ -158,8 +221,20 @@ $btnSiguienteCita.addEventListener("click", (e) => {
   $resumenServicios.innerHTML = `<h2 class="margin"> Resumen Servicios</h2>
                               <ul class="color-white" >${stringServicios}</ul>`;
   $resumenCita.innerHTML = `<h2 class="margin " > Resumen Cita</h2>
-                            <h4 class="color-white margin"> FECHA: ${datosUsuario.fecha_cita}</h4>
-                            <h4 class="color-white mrgin"> HORA: ${datosUsuario.hora_cita}</h4>`;
+                            <h4 class="color-white margin"> FECHA: ${usuarioBarber.datosUsuario.fecha_cita}</h4>
+                            <h4 class="color-white mrgin"> HORA: ${usuarioBarber.datosUsuario.hora_cita}</h4>`;
+
+  if (
+    usuarioBarber.datosUsuario.fecha_cita ||
+    usuarioBarber.datosUsuario.hora_cita
+  ) {
+  } else {
+    Swal.fire({
+      icon: "error",
+      title: "FALLO EN CITA",
+      text: "Debe llenar los campos servicios, fecha y hora para agendar cita",
+    });
+  }
 });
 
 $btnAnteriorResumen.addEventListener("click", (e) => {
@@ -172,21 +247,15 @@ $btnAnteriorResumen.addEventListener("click", (e) => {
 });
 
 $btnReservarCita.addEventListener("click", (e) => {
-  if (datosUsuario.fecha_cita || datosUsuario.hora_cita) {
-    setData("usuario_cita", usuarioBarber);
-    Swal.fire({
-      icon: "success",
-      title: "Cita Agendada",
-      showConfirmButton: false,
-    });
-    setTimeout(() => {
-      w.open("../index.html", "_self");
-    }, 3000);
-  } else {
-    Swal.fire({
-      icon: "error",
-      title: "FALLO EN CITA",
-      text: "Debe llenar los campos servicios, fecha y hora para agendar cita",
-    });
-  }
+  setData("usuario_cita", usuarioBarber);
+  Swal.fire({
+    icon: "success",
+    title: "Cita Agendada",
+    showConfirmButton: false,
+  });
+  setTimeout(() => {
+    w.open("../index.html", "_self");
+  }, 3000);
+
+  setData("reservado", true);
 });

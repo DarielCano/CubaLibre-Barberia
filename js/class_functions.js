@@ -58,8 +58,10 @@ export class Usuario_Tienda extends Usuario {
   }
 
   agregarProducto(producto) {
+    console.log("entre aqui");
     /*  const { nombre, precio, cantidad } = producto; */
     if (
+      !this.productos ||
       this.productos.findIndex(
         (element) => element.nombre == producto.nombre
       ) == -1
@@ -68,18 +70,27 @@ export class Usuario_Tienda extends Usuario {
 
       this.productos.push(producto);
     } else {
+      producto.cantidad = Number(producto.cantidad);
+      console.log(producto);
+      console.log(typeof producto.cantidad);
       producto.cantidad++;
     }
   }
 
+  incrementoProd(producto, cantActual) {
+    producto.cantidad = Number(producto.cantidad) + Number(cantActual);
+  }
+
   sumarProductos() {
     let acc = 0;
-    if (this.productos.length != 0) {
+    if (this.productos.length > 0) {
       this.productos.forEach((element) => {
         acc += parseInt(element.cantidad);
       });
+    } else {
+      acc = 0;
     }
-
+    /*  console.log(acc); */
     return acc;
   }
 
@@ -87,6 +98,16 @@ export class Usuario_Tienda extends Usuario {
     this.productos = this.productos.filter(
       (element) => element.nombre != nombre
     );
+  }
+
+  calcularMonto() {
+    let monto = 0;
+    if (this.productos.length > 0) {
+      this.productos.forEach((el) => {
+        monto = monto + el.cantidad * el.precio;
+      });
+    }
+    return monto;
   }
 }
 

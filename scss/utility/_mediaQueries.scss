@@ -2,6 +2,16 @@
   .btn-reserva {
     width: 15em;
   }
+  .cita-selector {
+    ul {
+      li {
+        button {
+          font-size: 1.2rem;
+          padding: 0.2rem 0.5rem;
+        }
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 768px) {

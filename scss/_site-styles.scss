@@ -12,6 +12,8 @@
 
   &__logo {
     padding: 0.5em 1em;
+    width: 10rem;
+    height: $headerHeight;
   }
   &__right {
     display: flex;
@@ -45,7 +47,7 @@
   padding: 1rem 5rem;
   background-color: map-get($colors, dark-color-shadow);
   color: map-get($colors, white-color);
-  position: absolute;
+  position: fixed;
   top: 4rem;
   right: 0;
 }

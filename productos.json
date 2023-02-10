@@ -1,0 +1,57 @@
+[
+    {
+   "nombre":"Aceite pre afeitado", 
+   "precio": 150
+},
+{
+ "nombre":"Bálsamo Para Barba con Acondicionador", 
+   "precio": 200
+},
+{
+ "nombre":"Shampoo Normalizador", 
+   "precio": 180
+},
+{
+ "nombre":"Bálsamo Hidratante Aftershave", 
+   "precio": 200
+},
+{
+ "nombre":"Arcilla/pomada Modelante", 
+   "precio": 130
+},
+
+{
+ "nombre":"Crema Para Afeitar, Clubman Pinaud", 
+   "precio": 250
+},
+{
+ "nombre":"Shampoo Normalizador 250ml", 
+   "precio": 20
+},
+
+{
+ "nombre":"Espuma Para Afeitar, Clubman Pinaud", 
+   "precio": 150
+},
+
+{
+ "nombre":" Kit 3 En 1 Clubman Pinaud, (aceite, bálsamo,acondicionador)",
+   "precio": 280
+},
+
+{
+ "nombre":"Aceite para barba",
+   "precio": 90
+},
+
+{
+ "nombre":"Bálsamo Para Barba Aroma Cítricos",
+   "precio": 160
+},
+
+{
+ "nombre":"Aceite Para Barba Aroma Maderas",
+   "precio": 120
+}
+]
+    

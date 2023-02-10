@@ -7,13 +7,19 @@
 
     <link rel="stylesheet" href="../css/style.css" />
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
     <title>Barbería CubaLibre</title>
   </head>
 
   <body>
     <header class="header">
-      <div class="header__logo">Logo</div>
+      <div class="header__logo">
+        <img src="../assets/img/cuba-PhotoRoom.png" alt="logo cuba" />
+      </div>
 
       <!-- hacer logo de barberia -->
       <div class="header__right">
@@ -104,7 +110,7 @@
             </div>
             <div class="usuario-citas">
               <h3 class="usuario"></h3>
-              <a class="usuario-sesion">Cerrar Sesión</a>
+              <p class="usuario-sesion">Cerrar Sesión</p>
             </div>
             <div class="cita-selector">
               <ul>
@@ -156,7 +162,7 @@
                 </div>
                 <div class="bloque-servicios__servicio bloque9">
                   <h3>Diseño de Grecas</h3>
-                  <strong>$20 - $100 (Según complejidad)</strong>
+                  <strong>$20 - $100</strong>
                 </div>
               </div>
             </div>
@@ -234,19 +240,7 @@
           </svg>
         </a>
       </div>
-      <div class="vista_carrito opacity">
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Producto</th>
-              <th scope="col">Precio</th>
-              <th scope="col">Cantidad</th>
-              <th scope="col">-----</th>
-            </tr>
-          </thead>
-          <tbody id="table-content"></tbody>
-        </table>
-      </div>
+      <div class="vista_carrito opacity"></div>
     </main>
     <footer class="footer">
       <div class="footer__dir">
@@ -323,6 +317,10 @@
     </footer>
 
     <script src="sweetalert2.all.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
     <script src="../js/citas.js" type="module"></script>
   </body>
 </html>

@@ -107,3 +107,44 @@
     width: 100%;
   }
 }
+
+.monto {
+  width: 100%;
+  text-align: center;
+  background-color: black;
+  font-size: 1.4rem;
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.prod_add,
+.prod_subtract {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid white;
+  border-radius: 18px;
+}
+.prod_add {
+  width: 2rem;
+  height: 2rem;
+  padding: 0.08rem 0.1rem;
+  margin-right: 0.5rem;
+}
+.prod_subtract {
+  width: 2rem;
+  height: 2rem;
+  margin-left: 0.5rem;
+  padding: 0.09rem 0.5rem;
+}
+.rowTrash {
+  cursor: pointer;
+  span {
+    font-size: 1.5rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 16px;
+    font-weight: bolder;
+    background-color: red;
+  }
+}

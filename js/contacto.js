@@ -1,6 +1,17 @@
 const d = document;
 const w = window;
 import { inicioSesion } from "./class_functions.js";
+import { carrito } from "./carrito.js";
+import { usuarioLogin } from "./loginUsuario.js";
+
+usuarioLogin("./sesion.html");
+carrito(
+  ".cant-carrito",
+  ".carrito",
+  ".vista_carrito",
+  ".table-cont",
+  ".icon-tabler-trash"
+);
 
 const user = inicioSesion("usuarioSesion");
 

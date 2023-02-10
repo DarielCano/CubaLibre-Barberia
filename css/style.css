@@ -251,6 +251,7 @@ body {
   font-size: 1rem;
   font-weight: 1000;
   transition: all 0.5s ease;
+  cursor: pointer;
 }
 .usuario-sesion:hover {
   color: #ff0000;
@@ -258,7 +259,9 @@ body {
 
 .cita-selector {
   margin-top: 1rem;
-  width: 100%;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .cita-selector ul {
   background-color: #ffffff;
@@ -271,7 +274,6 @@ body {
   border: 2px solid #ff0000;
   display: flex;
   justify-content: center;
-  padding: 0.2rem 0.5rem;
 }
 .cita-selector ul li:hover {
   background-color: #4173f9;
@@ -280,7 +282,7 @@ body {
 }
 .cita-selector ul li button {
   width: 100%;
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-weight: bold;
 }
 .cita-selector ul li button:hover {
@@ -316,10 +318,11 @@ body {
 .bloque-servicios__servicio h3 {
   color: #4173f9;
   text-align: center;
+  font-size: 1rem;
 }
 .bloque-servicios__servicio strong {
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #4173f9;
   text-align: center;
 }
@@ -760,6 +763,8 @@ tbody td {
 }
 .header__logo {
   padding: 0.5em 1em;
+  width: 10rem;
+  height: 4rem;
 }
 .header__right {
   display: flex;
@@ -791,7 +796,7 @@ tbody td {
   padding: 1rem 5rem;
   background-color: rgba(0, 0, 0, 0.6);
   color: #ffffff;
-  position: absolute;
+  position: fixed;
   top: 4rem;
   right: 0;
 }
@@ -1043,6 +1048,50 @@ tbody td {
   width: 100%;
 }
 
+.monto {
+  width: 100%;
+  text-align: center;
+  background-color: black;
+  font-size: 1.4rem;
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.prod_add,
+.prod_subtract {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid white;
+  border-radius: 18px;
+}
+
+.prod_add {
+  width: 2rem;
+  height: 2rem;
+  padding: 0.08rem 0.1rem;
+  margin-right: 0.5rem;
+}
+
+.prod_subtract {
+  width: 2rem;
+  height: 2rem;
+  margin-left: 0.5rem;
+  padding: 0.09rem 0.5rem;
+}
+
+.rowTrash {
+  cursor: pointer;
+}
+.rowTrash span {
+  font-size: 1.5rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 16px;
+  font-weight: bolder;
+  background-color: red;
+}
+
 .footer {
   background-color: rgba(65, 115, 249, 0.9);
   color: #ffffff;
@@ -1081,6 +1130,10 @@ tbody td {
 @media screen and (min-width: 480px) {
   .btn-reserva {
     width: 15em;
+  }
+  .cita-selector ul li button {
+    font-size: 1.2rem;
+    padding: 0.2rem 0.5rem;
   }
 }
 @media screen and (min-width: 768px) {

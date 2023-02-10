@@ -17,9 +17,10 @@
 
   <body>
     <header class="header">
-      <div class="header__logo">Logo</div>
+      <div class="header__logo">
+        <img src="../assets/img/cuba-PhotoRoom.png" alt="logo cuba" />
+      </div>
 
-      <!-- hacer logo de barberia -->
       <div class="header__right">
         <div class="opciones">
           <div class="inicioSesion">
@@ -103,7 +104,7 @@
         <div class="imagen-ppal__opacity">
           <section class="tienda">
             <h2>Bienvenido a nuestra tienda</h2>
-            <div class="search">
+            <div id="input_search" class="search">
               <input type="text" placeholder="Buscar" />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -169,7 +170,7 @@
                 </div>
                 <div class="card-texto">
                   <p class="prod-nombre">Aceite pre afeitado</p>
-                  <strong class="prod-precio">$150</strong>
+                  <strong class="prod-precio">150</strong>
                 </div>
               </div>
 
@@ -220,7 +221,7 @@
                   <p class="prod-nombre">
                     Bálsamo Para Barba con Acondicionador
                   </p>
-                  <strong class="prod-precio">$200</strong>
+                  <strong class="prod-precio">200</strong>
                 </div>
               </div>
 
@@ -269,7 +270,7 @@
                 </div>
                 <div class="card-texto">
                   <p class="prod-nombre">Shampoo Normalizador</p>
-                  <strong class="prod-precio">$180</strong>
+                  <strong class="prod-precio">180</strong>
                 </div>
               </div>
 
@@ -318,7 +319,7 @@
                 </div>
                 <div class="card-texto">
                   <p class="prod-nombre">Bálsamo Hidratante Aftershave</p>
-                  <strong class="prod-precio">$200</strong>
+                  <strong class="prod-precio">200</strong>
                 </div>
               </div>
 
@@ -367,7 +368,7 @@
                 </div>
                 <div class="card-texto">
                   <p class="prod-nombre">Arcilla/pomada Modelante</p>
-                  <strong class="prod-precio">$130</strong>
+                  <strong class="prod-precio">130</strong>
                 </div>
               </div>
 
@@ -416,7 +417,7 @@
                 </div>
                 <div class="card-texto">
                   <p class="prod-nombre">Crema Para Afeitar, Clubman Pinaud</p>
-                  <strong class="prod-precio">$250</strong>
+                  <strong class="prod-precio">250</strong>
                 </div>
               </div>
 
@@ -465,7 +466,7 @@
                 </div>
                 <div class="card-texto">
                   <p class="prod-nombre">Shampoo Normalizador 250ml</p>
-                  <strong class="prod-precio">$200</strong>
+                  <strong class="prod-precio">200</strong>
                 </div>
               </div>
 
@@ -517,7 +518,7 @@
                 </div>
                 <div class="card-texto">
                   <p class="prod-nombre">Espuma Para Afeitar, Clubman Pinaud</p>
-                  <strong class="prod-precio">$150</strong>
+                  <strong class="prod-precio">150</strong>
                 </div>
               </div>
 
@@ -569,7 +570,7 @@
                     Kit 3 En 1, Clubman Pinaud, (aceite, bálsamo,
                     acondicionador)
                   </p>
-                  <strong class="prod-precio">$280</strong>
+                  <strong class="prod-precio">280</strong>
                 </div>
               </div>
 
@@ -618,7 +619,7 @@
                 </div>
                 <div class="card-texto">
                   <p class="prod-nombre">Aceite para barba</p>
-                  <strong class="prod-precio">$90</strong>
+                  <strong class="prod-precio">90</strong>
                 </div>
               </div>
 
@@ -667,7 +668,7 @@
                 </div>
                 <div class="card-texto">
                   <p class="prod-nombre">Bálsamo Para Barba Aroma Cítricos</p>
-                  <strong class="prod-precio">$160</strong>
+                  <strong class="prod-precio">160</strong>
                 </div>
               </div>
 
@@ -716,7 +717,7 @@
                 </div>
                 <div class="card-texto">
                   <p class="prod-nombre">Aceite Para Barba Aroma Maderas</p>
-                  <strong class="prod-precio">$120</strong>
+                  <strong class="prod-precio">120</strong>
                 </div>
               </div>
             </article>
@@ -747,19 +748,7 @@
         </a>
       </div>
 
-      <div class="vista_carrito opacity">
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Producto</th>
-              <th scope="col">Precio</th>
-              <th scope="col">Cantidad</th>
-              <th scope="col">-----</th>
-            </tr>
-          </thead>
-          <tbody id="table-content"></tbody>
-        </table>
-      </div>
+      <div class="vista_carrito opacity"></div>
     </main>
     <footer class="footer">
       <div class="footer__dir">
