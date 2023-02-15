@@ -37,7 +37,7 @@ export function mostrarPais() {
       destination: "https://github.com/apvarun/toastify-js",
       newWindow: true,
       offset: {
-        x: 600,
+        x: 5,
         y: 40,
       },
 
