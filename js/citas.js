@@ -10,11 +10,30 @@ import {
 } from "./class_functions.js";
 
 import { carrito } from "./carrito.js";
+import { commonAnimation } from "./animation.js";
 
+commonAnimation();
 usuarioLogin("./sesion.html");
-carrito(".cant-carrito", ".carrito", ".vista_carrito", ".table-cont");
+carrito(".cant-carrito", ".carrito", ".vista_carrito");
 
 menu(".menu-btn", ".nav");
+
+/* EVENTO SCROLL PARTICULAR */
+const $head = d.querySelector(".header"),
+  $nav = d.querySelector(".nav");
+w.addEventListener("scroll", (e) => {
+  if (d.documentElement.scrollTop > 100) {
+    $head.classList.add("header-background");
+    if ($nav.matches(".is-active")) {
+      $nav.classList.add("header-background");
+    }
+  } else {
+    $head.classList.remove("header-background");
+    if ($nav.matches(".is-active")) {
+      $nav.classList.remove("header-background");
+    }
+  }
+});
 
 /* OBJETOS SERVICIO Y DATOS USUARIO PARA CITAS */
 const datosUsuario = {
@@ -90,6 +109,12 @@ SE HACE ASI, SE QUEDAN LOS VALORES PREVIAMENTE GUARDADOS */
 const renderCita = () => {
   let reservado = getData("reservado");
   if (reservado == true) {
+    /* reseteo de datos una vez agendada cita */
+    usuarioBarber.servicios.length = 0;
+    usuarioBarber.datosUsuario.fecha_cita = "";
+    usuarioBarber.datosUsuario.hora_cita = "";
+    setData("usuario_cita", usuarioBarber);
+    setData("reservado", false);
   }
 
   $bloquesServ.forEach((el) => {
@@ -136,9 +161,16 @@ d.addEventListener("click", (e) => {
     $resumen.classList.add("none");
   } else if (e.target.matches(".sel3")) {
     if (
-      usuarioBarber.datosUsuario.fecha_cita ||
-      usuarioBarber.datosUsuario.hora_cita
+      usuarioBarber.datosUsuario.fecha_cita &&
+      usuarioBarber.datosUsuario.hora_cita &&
+      usuarioBarber.servicios.length > 0
     ) {
+      addClase($selector3);
+      borrarCLase($selector2);
+      borrarCLase($selector1);
+      $servicios.classList.add("none");
+      $info.classList.add("none");
+      $resumen.classList.remove("none");
       let stringServicios = usuarioBarber.mostrarServicios();
       $resumenServicios.innerHTML = `<h2 class="margin"> Resumen Servicios</h2>
                                   <ul class="color-white" >${stringServicios}</ul>`;
@@ -149,16 +181,9 @@ d.addEventListener("click", (e) => {
       Swal.fire({
         icon: "error",
         title: "FALLO EN CITA",
-        text: "Debe llenar los campos servicios, fecha y hora para agendar cita",
+        text: "Debe llenar los campos SERVICIOS, FECHA y HORA para agendar cita",
       });
     }
-
-    addClase($selector3);
-    borrarCLase($selector2);
-    borrarCLase($selector1);
-    $servicios.classList.add("none");
-    $info.classList.add("none");
-    $resumen.classList.remove("none");
   }
 });
 
@@ -210,24 +235,23 @@ $btnAnteriorCita.addEventListener("click", (e) => {
 });
 
 $btnSiguienteCita.addEventListener("click", (e) => {
-  addClase($selector3);
-  borrarCLase($selector2);
-  borrarCLase($selector1);
-  $servicios.classList.add("none");
-  $info.classList.add("none");
-  $resumen.classList.remove("none");
-
-  let stringServicios = usuarioBarber.mostrarServicios();
-  $resumenServicios.innerHTML = `<h2 class="margin"> Resumen Servicios</h2>
-                              <ul class="color-white" >${stringServicios}</ul>`;
-  $resumenCita.innerHTML = `<h2 class="margin " > Resumen Cita</h2>
-                            <h4 class="color-white margin"> FECHA: ${usuarioBarber.datosUsuario.fecha_cita}</h4>
-                            <h4 class="color-white mrgin"> HORA: ${usuarioBarber.datosUsuario.hora_cita}</h4>`;
-
   if (
-    usuarioBarber.datosUsuario.fecha_cita ||
-    usuarioBarber.datosUsuario.hora_cita
+    usuarioBarber.datosUsuario.fecha_cita &&
+    usuarioBarber.datosUsuario.hora_cita &&
+    usuarioBarber.servicios.length > 0
   ) {
+    addClase($selector3);
+    borrarCLase($selector2);
+    borrarCLase($selector1);
+    $servicios.classList.add("none");
+    $info.classList.add("none");
+    $resumen.classList.remove("none");
+    let stringServicios = usuarioBarber.mostrarServicios();
+    $resumenServicios.innerHTML = `<h2 class="margin"> Resumen Servicios</h2>
+                                <ul class="color-white" >${stringServicios}</ul>`;
+    $resumenCita.innerHTML = `<h2 class="margin " > Resumen Cita</h2>
+                              <h4 class="color-white margin"> FECHA: ${usuarioBarber.datosUsuario.fecha_cita}</h4>
+                              <h4 class="color-white mrgin"> HORA: ${usuarioBarber.datosUsuario.hora_cita}</h4>`;
   } else {
     Swal.fire({
       icon: "error",

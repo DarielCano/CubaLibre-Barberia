@@ -1,56 +1,68 @@
 [
     {
    "nombre":"Aceite pre afeitado", 
-   "precio": 150
+   "imgSrc":"../assets/img/1-18-300x300.png",
+    "precio": 150
 },
 {
  "nombre":"Bálsamo Para Barba con Acondicionador", 
+ "imgSrc":"../assets/img/1-2-300x300.png",
    "precio": 200
 },
 {
  "nombre":"Shampoo Normalizador", 
+ "imgSrc":"../assets/img/1-12-300x300.png",
    "precio": 180
 },
 {
  "nombre":"Bálsamo Hidratante Aftershave", 
+ "imgSrc":"../assets/img/1-22-300x300.png",
    "precio": 200
 },
 {
  "nombre":"Arcilla/pomada Modelante", 
+ "imgSrc":"../assets/img/1-3-300x300.png",
    "precio": 130
 },
 
 {
  "nombre":"Crema Para Afeitar, Clubman Pinaud", 
+ "imgSrc":"../assets/img/1-4-300x300.png", 
    "precio": 250
 },
 {
  "nombre":"Shampoo Normalizador 250ml", 
+ "imgSrc":"../assets/img/1-9-300x300.png",
    "precio": 20
 },
 
 {
  "nombre":"Espuma Para Afeitar, Clubman Pinaud", 
+ "imgSrc":"../assets/img/1-e1665706997660-300x300.png",
    "precio": 150
 },
 
 {
  "nombre":" Kit 3 En 1 Clubman Pinaud, (aceite, bálsamo,acondicionador)",
-   "precio": 280
+ "imgSrc":"../assets/img/2-2-300x300.png",
+ "precio": 280
 },
 
 {
  "nombre":"Aceite para barba",
+ "imgSrc":"../assets/img/3-3-300x300.png",
    "precio": 90
 },
 
 {
  "nombre":"Bálsamo Para Barba Aroma Cítricos",
+ "imgSrc":"../assets/img/4-300x300.png", 
    "precio": 160
 },
 
 {
  "nombre":"Aceite Para Barba Aroma Maderas",
+ "imgSrc":"../assets/img/A-2-300x300.png",
    "precio": 120
 }
 ]

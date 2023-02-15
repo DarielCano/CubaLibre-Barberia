@@ -5,13 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- LINK CSS -->
     <link rel="stylesheet" href="../css/style.css" />
+
+    <!-- LINK SWEET ALERT -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- LINK TOASTIFY -->
     <link
       rel="stylesheet"
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
     />
 
+    <!-- LINK WOW JS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <title>Barbería CubaLibre</title>
   </head>
 
@@ -125,7 +136,7 @@
             </div>
 
             <article class="cards">
-              <div class="cards__card">
+              <!--  <div class="cards__card">
                 <div class="card-img">
                   <img src="../assets/img/1-18-300x300.png" alt="" />
                   <div class="block-cart">
@@ -719,7 +730,7 @@
                   <p class="prod-nombre">Aceite Para Barba Aroma Maderas</p>
                   <strong class="prod-precio">120</strong>
                 </div>
-              </div>
+              </div> -->
             </article>
           </section>
         </div>
@@ -754,12 +765,16 @@
       <div class="footer__dir">
         <h3>Puedes encontrarnos en la siguiente dirección</h3>
         <p>
-          <a href="#">Boulevard Euquerio Guerrero km 8</a>, a un costado de la
-          Refaccionaria el Pistón
+          <a
+            href="https://www.google.com/maps/place/Ferre+Tools/@20.9708766,-101.2794559,20.47z/data=!4m6!3m5!1s0x842b76e8e0486c5f:0xd9db13ae58bdab49!8m2!3d20.9709913!4d-101.2792124!16s%2Fg%2F11b7c5_19c?coh=164777&entry=tt"
+            target="_blank"
+            rel="noopener"
+            >Boulevard Euquerio Guerrero km 8</a
+          >, a un costado de la Refaccionaria el Pistón
         </p>
       </div>
       <div class="footer__redes">
-        <a href="#">
+        <a href="https://facebook.com" target="_blank" rel="noopener">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="icon icon-tabler icon-tabler-brand-facebook"
@@ -778,7 +793,7 @@
             />
           </svg>
         </a>
-        <a href="#">
+        <a href="https://instagram.com" target="_blank" rel="noopener">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="icon icon-tabler icon-tabler-brand-instagram"
@@ -798,7 +813,7 @@
           </svg>
         </a>
 
-        <a href="#">
+        <a href="https://web.whatsapp.com/" target="_blank" rel="noopener">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="icon icon-tabler icon-tabler-brand-whatsapp"
@@ -827,6 +842,12 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/toastify-js"
     ></script>
+    <script src="sweetalert2.all.min.js"></script>
+    <!-- wow.js -->
+    <script src="../js/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
     <script src="../js/tienda.js" type="module"></script>
   </body>
 </html>

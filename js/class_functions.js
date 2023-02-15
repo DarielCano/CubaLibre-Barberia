@@ -58,7 +58,6 @@ export class Usuario_Tienda extends Usuario {
   }
 
   agregarProducto(producto) {
-    console.log("entre aqui");
     /*  const { nombre, precio, cantidad } = producto; */
     if (
       !this.productos ||
@@ -71,8 +70,6 @@ export class Usuario_Tienda extends Usuario {
       this.productos.push(producto);
     } else {
       producto.cantidad = Number(producto.cantidad);
-      console.log(producto);
-      console.log(typeof producto.cantidad);
       producto.cantidad++;
     }
   }
@@ -90,7 +87,6 @@ export class Usuario_Tienda extends Usuario {
     } else {
       acc = 0;
     }
-    /*  console.log(acc); */
     return acc;
   }
 
@@ -104,7 +100,7 @@ export class Usuario_Tienda extends Usuario {
     let monto = 0;
     if (this.productos.length > 0) {
       this.productos.forEach((el) => {
-        monto = monto + el.cantidad * el.precio;
+        monto = monto + el.cantidad * parseInt(el.precio.slice(1));
       });
     }
     return monto;

@@ -5,11 +5,17 @@ import { menu } from "./menu.js";
 import { scrollTop } from "./scroll.js";
 import { usuarioLogin } from "./loginUsuario.js";
 import { carrito } from "./carrito.js";
+import { commonAnimation } from "./animation.js";
+import { mostrarPais } from "./mostrarPais.js";
 
+commonAnimation();
 usuarioLogin("./pages/sesion.html");
-carrito(".cant-carrito", ".carrito", ".vista_carrito", ".table-cont");
+carrito(".cant-carrito", ".carrito", ".vista_carrito");
 
 //////////////////////////////////////////////////////////////////////////////////////////////
+
+/* if (sessionStorage.getItem("sesion") == true) */
+d.addEventListener("DOMContentLoaded", mostrarPais);
 
 let $enlaces = d.querySelectorAll(".link");
 

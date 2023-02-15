@@ -46,7 +46,7 @@ export function carrito(cantCarrito, carrito, vistaCarrito) {
     if (usuarioTienda.productos.length == 0) {
       stringProd = `No hay productos en su carrito`;
 
-      $vistaCarrito.innerHTML = `<p> ${stringProd}</p>`;
+      $vistaCarrito.innerHTML = ` <div class= "disp-flex"><p> ${stringProd}</p> <div class="rowTrash btnCLoseCarrito block"><span> X </span></div> </div>`;
     } else {
       stringProd = ` <table class="table">
       <thead>
@@ -62,7 +62,7 @@ export function carrito(cantCarrito, carrito, vistaCarrito) {
           stringProd +
           `<tbody class="table-cont"> <tr><td>${producto.nombre}</td>
                                           <td>${producto.precio}</td>
-                                          <td class="prod_cant"> <strong class ="prod_add"> + </strong>  ${producto.cantidad} <strong class ="prod_subtract"> - </strong> </td>
+                                          <td class="prod_cant"> <strong class ="prod_add"> + </strong> <strong> ${producto.cantidad}</strong> <strong class ="prod_subtract"> - </strong> </td>
                                           <td><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                           <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                                           <line x1="4" y1="7" x2="20" y2="7" />
@@ -76,7 +76,13 @@ export function carrito(cantCarrito, carrito, vistaCarrito) {
       $vistaCarrito.innerHTML =
         stringProd +
         `</tbody></table> 
-                              <p class= "monto"> Total a pagar: $${usuarioTienda.calcularMonto()}</p>`;
+                              <p class= "monto"> Total a pagar: $${usuarioTienda.calcularMonto()}</p>
+                              <button class= "comprarCarrito btn">Comprar</button>`;
+
+      incrementarProducto();
+      decrementarProducto();
+      eliminarProducto();
+      comprarCarrito();
     }
 
     /* CERRAR CARRITO */
@@ -86,12 +92,31 @@ export function carrito(cantCarrito, carrito, vistaCarrito) {
     });
   };
 
+  /* COMPRAR CARRITO */
+  const comprarCarrito = () => {
+    let $comprar = d.querySelector(".comprarCarrito");
+    $comprar.addEventListener("click", (e) => {
+      usuarioTienda.productos.length = 0;
+      $cantCarrrito.textContent = usuarioTienda.sumarProductos();
+      Swal.fire({
+        icon: "success",
+        title: "Gracias por su compra",
+        confirmButtonText: "Seguir comprando",
+      });
+      setData("usuarioTienda", usuarioTienda);
+      $vistaCarrito.classList.add("opacity");
+      renderCarrito();
+    });
+  };
+
   /* VER CARRITO, INCREMENTAR CANTIDADES Y ELIMINAR PRODUCTO*/
   $carrito.addEventListener("click", (e) => {
     $vistaCarrito.classList.remove("opacity");
     renderCarrito();
+  });
 
-    /* INCREMENTAR PRODUCTO */
+  /* INCREMENTAR PRODUCTO */
+  const incrementarProducto = () => {
     let $addCant = d.querySelectorAll(".prod_add");
 
     $addCant.forEach((el) => {
@@ -101,22 +126,21 @@ export function carrito(cantCarrito, carrito, vistaCarrito) {
         nproducto.precio =
           el.parentNode.parentNode.firstElementChild.nextElementSibling.textContent;
 
-        console.table(usuarioTienda.productos);
-
         for (let prod of usuarioTienda.productos) {
           if (prod.nombre == nproducto.nombre) prod.cantidad++;
           setData("usuarioTienda", usuarioTienda);
-          console.table(usuarioTienda.productos);
+
           let prob = usuarioTienda.sumarProductos();
-          console.log(`cantidad de prodctos: ${prob}`);
+
           $cantCarrrito.textContent = prob;
           renderCarrito();
         }
       });
     });
+  };
 
-    /* DECREMENTAR PRODUCTOS */
-
+  /* DECREMENTAR PRODUCTOS */
+  const decrementarProducto = () => {
     let $subtract = d.querySelectorAll(".prod_subtract");
 
     $subtract.forEach((el) => {
@@ -138,22 +162,21 @@ export function carrito(cantCarrito, carrito, vistaCarrito) {
         }
       });
     });
+  };
 
-    /* ELIMINAR DEL CARRITO */
-
+  /* ELIMINAR DEL CARRITO */
+  const eliminarProducto = () => {
     let $trash = d.querySelectorAll(".icon-tabler-trash");
 
     $trash.forEach((el) => {
       el.addEventListener("click", (e) => {
-        console.log(e.target);
         usuarioTienda.eliminarProducto(
           el.parentNode.parentNode.firstElementChild.textContent
         );
 
         setData("usuarioTienda", usuarioTienda);
-        renderCarrito();
-
         $cantCarrrito.textContent = usuarioTienda.sumarProductos();
+        renderCarrito();
 
         Toastify({
           text: "Eliminado del carrito",
@@ -171,7 +194,7 @@ export function carrito(cantCarrito, carrito, vistaCarrito) {
         }).showToast();
       });
     });
-  });
+  };
 
   return usuarioTienda;
 }
