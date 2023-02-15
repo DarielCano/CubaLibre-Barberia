@@ -6,7 +6,7 @@ export function mostrarPais() {
 
   /* A PARTIR DE .JSON CON ISO DE PAISES IMPRIMIR EL PAIS */
   function getCountryName(countryCode) {
-    fetch("../paises.json")
+    fetch("./paises.json")
       .then((res) => res.json())
       .then((data) => {
         if (data.hasOwnProperty(countryCode)) {
@@ -15,7 +15,7 @@ export function mostrarPais() {
       });
   }
 
-  /* OBTEBIENDO LAS COORDENADAS PARA API */
+  /* OBTENIENDO LAS COORDENADAS PARA API */
   n.geolocation.getCurrentPosition(success);
 
   /* CAPTURA DEL ISO DEL PAIS PARA IMPRIMIR EN PANTALLA */
