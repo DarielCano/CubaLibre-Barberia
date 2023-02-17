@@ -7,7 +7,9 @@ import { setData } from "./class_functions.js";
 import { usuarioLogin } from "./loginUsuario.js";
 import { carrito } from "./carrito.js";
 import { commonAnimation } from "./animation.js";
+import { iniciarSesion } from "./class_functions.js";
 
+iniciarSesion("./sesion.html");
 commonAnimation();
 menu(".menu-btn", ".nav");
 usuarioLogin("./sesion.html");
@@ -97,7 +99,6 @@ function cargaProductos(datos) {
   });
 
   /* DECLARACION DE VARIABLES */
-
   let $search = d.getElementById("input_search");
   let $agregarAlCarrito = d.querySelectorAll(".icon-tabler-shopping-cart-plus");
   let $cardTexto = d.querySelectorAll(".card-texto");
@@ -116,11 +117,9 @@ function cargaProductos(datos) {
   };
 
   /* EVENTO DEL BUSCADOR */
-
   $search.addEventListener("input", buscador);
 
   /* AGREGAR AL CARRITO */
-
   $agregarAlCarrito.forEach((el) => {
     const producto = {
       nombre: "",
@@ -146,7 +145,7 @@ function cargaProductos(datos) {
         newWindow: true,
         offset: {
           x: 5,
-          y: 40,
+          y: 55,
         },
 
         style: {

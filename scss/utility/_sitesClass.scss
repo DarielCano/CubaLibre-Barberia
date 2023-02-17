@@ -34,6 +34,7 @@
 }
 
 .opacity {
+  pointer-events: none;
   opacity: 0;
 }
 
@@ -71,7 +72,11 @@
   order: 1;
 }
 
+.usuarioSesion {
+  cursor: pointer;
+}
 .icon-tabler-user,
+.icon-tabler-user-off,
 .icon-tabler-shopping-cart {
   &:hover {
     fill: map-get($colors, red-color);
@@ -92,6 +97,7 @@
 
 .icon-tabler-trash {
   cursor: pointer;
+  text-align: center;
   &:hover {
     fill: map-get($colors, red-color);
     transition: fill 0.5s ease;
@@ -111,7 +117,7 @@
 .prod_cant {
   display: flex;
   flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 .monto {
@@ -125,37 +131,34 @@
 
 .prod_add,
 .prod_subtract {
-  font-size: 1.5rem;
-  font-weight: bold;
+  /*  font-weight: bold; */
   text-align: center;
   cursor: pointer;
-  border: 1px solid white;
-  border-radius: 18px;
+  svg {
+    fill: black;
+  }
 }
 .prod_add {
-  width: 2rem;
-  height: 2rem;
-  padding: 0.08rem 0.1rem;
   margin-right: 0.5rem;
 }
 .prod_subtract {
-  width: 2rem;
-  height: 2rem;
   margin-left: 0.5rem;
-  padding: 0.09rem 0.5rem;
 }
 .rowTrash {
   cursor: pointer;
-  span {
-    font-size: 1.5rem;
-    padding: 0.1rem 0.4rem;
-    border-radius: 16px;
-    font-weight: bolder;
-    background-color: red;
-  }
+  text-align: center;
+}
+span {
+  font-size: 1rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 16px;
+  font-weight: bolder;
+  background-color: red;
+  margin-left: 2rem;
 }
 
 .comprarCarrito {
+  margin-top: 1rem;
   @include margin-lat;
 }
 

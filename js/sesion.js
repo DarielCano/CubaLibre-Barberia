@@ -14,6 +14,7 @@ const leerTexto = (e) => {
   datos[e.target.id] = e.target.value;
 };
 
+/* COMPROBANDO DATOS */
 const comprobarDatos = (users) => {
   const $mensaje1 = d.querySelector(".msg1");
   const $mensaje2 = d.querySelector(".msg2");
@@ -49,15 +50,16 @@ const comprobarDatos = (users) => {
       setTimeout(() => {
         $loader.classList.add("none");
         mensaje_modal(users[index].nombre);
-      }, 2000);
+      }, 3000);
 
       setTimeout(() => {
         w.open("../index.html", "_self");
-      }, 3000);
+      }, 4000);
     }
   }
 };
 
+/* MENSAJE DE BIENVENIDA */
 const mensaje_modal = (nombreUsuario) => {
   let $modal = d.querySelector(".modal");
   let $msg = d.querySelector(".form-sesion-response");
@@ -78,6 +80,7 @@ const mensaje_modal = (nombreUsuario) => {
   }, 3000);
 };
 
+/* ENVIAR DATOS */
 const enviarDatos = (e) => {
   e.preventDefault();
   let usuariosStorage = leerDatos("usuarios");
@@ -89,9 +92,11 @@ const $email = d.querySelector("#email");
 const $password = d.querySelector("#password");
 const $formulario = d.querySelector("#sesion-form");
 
+/* EVENTO DE INPUTS */
 $email.addEventListener("input", leerTexto);
 $password.addEventListener("input", leerTexto);
 
+/* EVENTO DEL FORMULARIO */
 $formulario.addEventListener("submit", enviarDatos);
 
 menu(".menu-btn", ".nav");

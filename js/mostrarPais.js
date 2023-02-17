@@ -1,6 +1,7 @@
 const d = document,
   n = navigator;
 
+/* FUNCION PARA MOSTRAR MENSAJE DE BIENVENIDA DESDE SU PAIS */
 export function mostrarPais() {
   let key = "77894d358b535f22b04a3809825e5b62";
 
@@ -31,19 +32,22 @@ export function mostrarPais() {
   }
 
   function mostrarMensaje(pais) {
-    Toastify({
-      text: `Gracias por visitarnos desde ${pais}. BIENVENIDO!`,
-      duration: 5000,
-      destination: "https://github.com/apvarun/toastify-js",
-      newWindow: true,
-      offset: {
-        x: 5,
-        y: 40,
-      },
+    if (!sessionStorage.getItem("mensaje")) {
+      Toastify({
+        text: `Gracias por visitarnos desde ${pais}. BIENVENIDO!`,
+        duration: 3000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        offset: {
+          x: 5,
+          y: 40,
+        },
 
-      style: {
-        background: "rgb(65, 115, 249, 0.9)",
-      },
-    }).showToast();
+        style: {
+          background: "rgb(65, 115, 249, 0.9)",
+        },
+      }).showToast();
+      sessionStorage.setItem("mensaje", true);
+    }
   }
 }

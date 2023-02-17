@@ -11,11 +11,12 @@ import {
 
 import { carrito } from "./carrito.js";
 import { commonAnimation } from "./animation.js";
+import { iniciarSesion } from "./class_functions.js";
 
+iniciarSesion("./sesion.html");
 commonAnimation();
 usuarioLogin("./sesion.html");
 carrito(".cant-carrito", ".carrito", ".vista_carrito");
-
 menu(".menu-btn", ".nav");
 
 /* EVENTO SCROLL PARTICULAR */
@@ -40,8 +41,8 @@ const datosUsuario = {
   fecha_cita: "",
   hora_cita: "",
 };
-/* CARGAR DATOS DE USUARIO Q INICIO SESION */
 
+/* CARGAR DATOS DE USUARIO Q INICIO SESION */
 let datos = inicioSesion("usuarioSesion");
 let usuario = getData("usuario_cita");
 const usuarioBarber = !usuario
@@ -139,11 +140,15 @@ const renderCita = () => {
 renderCita();
 ///////////////////////////////////////////////////////////////////////////////
 
+/* CERRAR SESION DESDE CITA */
 $cerrarSesion.addEventListener("click", (e) => {
   sessionStorage.removeItem("sesion");
+  sessionStorage.removeItem("usuarioSesion");
+  sessionStorage.removeItem("mensaje");
   location.href = "../index.html";
 });
 
+/* MENU DE CITAS */
 d.addEventListener("click", (e) => {
   if (e.target.matches(".sel1")) {
     addClase($selector1, [$info, $resumen]);
@@ -261,6 +266,7 @@ $btnSiguienteCita.addEventListener("click", (e) => {
   }
 });
 
+/* RESUMEN CITA */
 $btnAnteriorResumen.addEventListener("click", (e) => {
   addClase($selector2);
   borrarCLase($selector1);

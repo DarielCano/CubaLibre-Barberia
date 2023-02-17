@@ -1,4 +1,8 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani&display=swap");
 :root {
   --negro: #393939;
   /* Tipografía */
@@ -178,6 +182,7 @@ body {
 }
 
 .btn {
+  font-family: "Poppins", sans-serif;
   background-color: #ff0000;
   color: #ffffff;
   transition: all 0.8s ease;
@@ -210,6 +215,7 @@ body {
 }
 
 .contenedor-cita {
+  font-family: "Rajdhani", sans-serif;
   color: #ffffff;
   width: 90%;
   margin-left: auto;
@@ -222,7 +228,6 @@ body {
 }
 
 .cita {
-  /*   height: 50%; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -230,6 +235,7 @@ body {
 }
 
 .cita-encabezado {
+  font-family: "Lobster", cursive;
   height: 8rem;
   display: flex;
   flex-direction: column;
@@ -463,23 +469,15 @@ textarea {
 }
 
 .tienda {
+  font-family: "Rajdhani", sans-serif;
   padding-top: 9rem;
   padding-bottom: 2rem;
   background-image: url(../assets/img/depositphotos_71389881-stock-photo-vintage-equipment-of-a-barber.jpg);
   width: 100%;
   position: relative;
-  /*   &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    width: 100%;
-    height: 100%;
-    background-color: map-get($colors, dark-color-shadow);
-  } */
 }
 .tienda h2 {
+  font-family: "Lobster", cursive;
   font-size: 2rem;
   color: #ffffff;
   padding-bottom: 1rem;
@@ -507,7 +505,6 @@ textarea {
   transition: opacity 0.5s ease;
 }
 .search svg:hover {
-  /*   fill: map-get($colors, white-color); */
   opacity: 1.5;
 }
 
@@ -519,19 +516,19 @@ textarea {
 }
 
 thead th:nth-child(1) {
-  width: 30%;
+  width: 20%;
 }
 
 thead th:nth-child(2) {
-  width: 30%;
+  width: 20%;
 }
 
 thead th:nth-child(3) {
-  width: 10%;
+  width: 20%;
 }
 
 thead th:nth-child(4) {
-  width: 25%;
+  width: 20%;
 }
 
 th {
@@ -545,6 +542,7 @@ td {
 }
 
 tbody td {
+  font-size: 1.2rem;
   text-align: center;
 }
 
@@ -838,6 +836,8 @@ tbody td {
   margin-bottom: 1rem;
 }
 .nav__list a {
+  font-family: "Kanit", sans-serif;
+  font-size: 1.5rem;
   text-shadow: none;
   width: auto;
   padding-top: 0.2rem;
@@ -874,8 +874,10 @@ tbody td {
   /* font-family: ; */
 }
 .info h2 {
+  font-family: "Lobster", cursive;
   text-align: center;
   font-size: 2rem;
+  line-height: 1.2;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
@@ -905,6 +907,7 @@ tbody td {
 
 .general-info__text {
   padding: 1rem;
+  font-family: "Rajdhani", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -974,6 +977,7 @@ tbody td {
 }
 
 .opacity {
+  pointer-events: none;
   opacity: 0;
 }
 
@@ -1011,7 +1015,12 @@ tbody td {
   order: 1;
 }
 
+.usuarioSesion {
+  cursor: pointer;
+}
+
 .icon-tabler-user:hover,
+.icon-tabler-user-off:hover,
 .icon-tabler-shopping-cart:hover {
   fill: #ff0000;
   transition: fill 0.5s ease;
@@ -1030,6 +1039,7 @@ tbody td {
 
 .icon-tabler-trash {
   cursor: pointer;
+  text-align: center;
 }
 .icon-tabler-trash:hover {
   fill: #ff0000;
@@ -1050,7 +1060,7 @@ tbody td {
 .prod_cant {
   display: flex;
   flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
@@ -1065,40 +1075,39 @@ tbody td {
 
 .prod_add,
 .prod_subtract {
-  font-size: 1.5rem;
-  font-weight: bold;
+  /*  font-weight: bold; */
   text-align: center;
   cursor: pointer;
-  border: 1px solid white;
-  border-radius: 18px;
+}
+.prod_add svg,
+.prod_subtract svg {
+  fill: black;
 }
 
 .prod_add {
-  width: 2rem;
-  height: 2rem;
-  padding: 0.08rem 0.1rem;
   margin-right: 0.5rem;
 }
 
 .prod_subtract {
-  width: 2rem;
-  height: 2rem;
   margin-left: 0.5rem;
-  padding: 0.09rem 0.5rem;
 }
 
 .rowTrash {
   cursor: pointer;
+  text-align: center;
 }
-.rowTrash span {
-  font-size: 1.5rem;
+
+span {
+  font-size: 1rem;
   padding: 0.1rem 0.4rem;
   border-radius: 16px;
   font-weight: bolder;
   background-color: red;
+  margin-left: 2rem;
 }
 
 .comprarCarrito {
+  margin-top: 1rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1112,6 +1121,7 @@ tbody td {
 }
 
 .footer {
+  font-family: "Kanit", sans-serif;
   background-color: rgba(65, 115, 249, 0.9);
   color: #ffffff;
   padding: 1rem 1rem;
@@ -1161,6 +1171,40 @@ tbody td {
   margin-right: auto;
 }
 
+@media screen and (max-width: 600px) {
+  table {
+    width: 100%;
+    display: block;
+  }
+  thead th {
+    display: none;
+  }
+  thead th:last-child {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  thead th:last-child span {
+    margin-left: 0;
+  }
+  tr:nth-of-type(2n) {
+    background-color: inherit;
+  }
+  tr td:first-child {
+    border-top: 1px solid #ffffff;
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+  tbody td {
+    display: block;
+    text-align: center;
+  }
+  tbody td:before {
+    content: attr(data-th);
+    display: block;
+    text-align: center;
+  }
+}
 @media screen and (min-width: 480px) {
   .btn-reserva {
     width: 15em;

@@ -58,7 +58,6 @@ export class Usuario_Tienda extends Usuario {
   }
 
   agregarProducto(producto) {
-    /*  const { nombre, precio, cantidad } = producto; */
     if (
       !this.productos ||
       this.productos.findIndex(
@@ -128,6 +127,31 @@ export const getData = (clave) => {
   return data == null ? false : JSON.parse(data);
 };
 
+/* SETEAR DATOS AL LOCALSTORAGE */
 export const setData = (clave, user) => {
   localStorage.setItem(clave, JSON.stringify(user));
 };
+
+/* FUNCION PARA INICIO DE SESION' */
+export function iniciarSesion(dir) {
+  let $enlaces = document.querySelectorAll(".link");
+  $enlaces.forEach((enlace) => {
+    enlace.addEventListener("click", (e) => {
+      if (sessionStorage.getItem("sesion") == null) {
+        e.preventDefault();
+        Swal.fire({
+          icon: "error",
+          title: "NO HA INICIADO SESION",
+          text: "Debe iniciar sesión previamente",
+          showConfirmButton: false,
+        });
+
+        setTimeout(() => {
+          window.open(dir, "_self");
+        }, 3000);
+      }
+    });
+  });
+}
+
+/*  */

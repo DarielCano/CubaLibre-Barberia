@@ -1,11 +1,6 @@
 import { menu } from "./menu.js";
 import { scrollTop } from "./scroll.js";
-import {
-  Usuario,
-  Usuario_barberia,
-  leerDatos,
-  getData,
-} from "./class_functions.js";
+import { Usuario, getData } from "./class_functions.js";
 
 const d = document;
 const w = window;
@@ -19,6 +14,7 @@ export const leerTexto = (e) => {
   datosUser[e.target.id] = e.target.value;
 };
 
+/* mensaje de bienvenida */
 const mensaje_modal = (nombreUsuario) => {
   let $modal = d.querySelector(".modal");
   let $msg = d.querySelector(".form-sesion-response");
@@ -40,6 +36,7 @@ const mensaje_modal = (nombreUsuario) => {
   }, 3000);
 };
 
+/* VALIDACIONES */
 const comprobarDatosRegistro = (datos) => {
   if (datos.findIndex((elemento) => elemento.email == datosUser.email) != -1) {
     let $msg = d.querySelector(".msg");
@@ -60,25 +57,25 @@ const comprobarDatosRegistro = (datos) => {
     }, 2000);
   } else {
     datos.push(datosUser);
-    console.log(datos);
+
     localStorage.setItem("usuarios", JSON.stringify(datos));
     sessionStorage.setItem("usuarioSesion", datosUser);
     sesion = true;
     sessionStorage.setItem("sesion", sesion);
-
     sessionStorage.setItem("usuarioSesion", JSON.stringify(datosUser));
     $loader.classList.remove("none");
     setTimeout(() => {
       $loader.classList.add("none");
       mensaje_modal(datosUser.nombre);
-    }, 2000);
+    }, 3000);
 
     setTimeout(() => {
       w.open("../index.html", "_self");
-    }, 3000);
+    }, 4000);
   }
 };
 
+/* ENVIAR DATOS */
 const enviarDatos = (e) => {
   e.preventDefault();
   if (!localStorage.getItem("usuarios")) {
@@ -92,11 +89,10 @@ const enviarDatos = (e) => {
     setTimeout(() => {
       $loader.classList.add("none");
       mensaje_modal(datosUser.nombre);
-    }, 2000);
-
+    }, 3000);
     setTimeout(() => {
       w.open("../index.html", "_self");
-    }, 3000);
+    }, 4000);
   } else {
     let usuariosStorage = getData("usuarios");
 
@@ -111,12 +107,12 @@ const $email = d.querySelector("#email");
 const $password = d.querySelector("#password");
 const $formRegistro = d.querySelector("#form_register");
 
+/* EVENTOS DE INPUTS */
 $nombre.addEventListener("input", leerTexto);
 $apellido.addEventListener("input", leerTexto);
 $telefono.addEventListener("input", leerTexto);
 $email.addEventListener("input", leerTexto);
 $password.addEventListener("input", leerTexto);
-/* export { usuarioBarber };*/
 $formRegistro.addEventListener("submit", enviarDatos);
 
 menu(".menu-btn", ".nav");

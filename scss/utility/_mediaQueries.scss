@@ -1,3 +1,40 @@
+@media screen and (max-width: 600px) {
+  table {
+    width: 100%;
+    display: block;
+  }
+  thead {
+    th {
+      display: none;
+    }
+    th:last-child {
+      display: block;
+      @include margin-lat;
+      span {
+        margin-left: 0;
+      }
+    }
+  }
+
+  tr:nth-of-type(2n) {
+    background-color: inherit;
+  }
+  tr td:first-child {
+    border-top: 1px solid map-get($colors, white-color);
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+  tbody td {
+    display: block;
+    text-align: center;
+  }
+  tbody td:before {
+    content: attr(data-th);
+    display: block;
+    text-align: center;
+  }
+}
+
 @media screen and (min-width: 480px) {
   .btn-reserva {
     width: 15em;

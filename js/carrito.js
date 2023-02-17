@@ -17,8 +17,8 @@ export function carrito(cantCarrito, carrito, vistaCarrito) {
     precio: "",
     cantidad: "",
   };
-  /* CARGAR DATOS A USUARIO DE TIENDA */
 
+  /* CARGAR DATOS A USUARIO DE TIENDA */
   let datos = inicioSesion("usuarioSesion");
   let usuario = getData("usuarioTienda");
   const usuarioTienda = !usuario
@@ -39,16 +39,19 @@ export function carrito(cantCarrito, carrito, vistaCarrito) {
         usuario.productos
       );
 
+  /* MOSTRAR CANTIDAD TOTAL DEL CARRITO */
   $cantCarrrito.textContent = usuarioTienda.sumarProductos();
 
+  /* FUNCION PARA CARGAR LOS DATOS EN HTML */
   const renderCarrito = () => {
+    const { productos } = usuarioTienda;
     let stringProd = "";
-    if (usuarioTienda.productos.length == 0) {
+    if (productos.length == 0) {
       stringProd = `No hay productos en su carrito`;
 
       $vistaCarrito.innerHTML = ` <div class= "disp-flex"><p> ${stringProd}</p> <div class="rowTrash btnCLoseCarrito block"><span> X </span></div> </div>`;
     } else {
-      stringProd = ` <table class="table">
+      stringProd = ` <table class="table tableStyle">
       <thead>
         <tr>
           <th scope="col">Producto</th>
@@ -57,12 +60,21 @@ export function carrito(cantCarrito, carrito, vistaCarrito) {
           <th scope="col" class="rowTrash btnCLoseCarrito"><span> X </span></th>
         </tr>
       </thead>`;
-      for (let producto of usuarioTienda.productos) {
+      for (let producto of productos) {
         stringProd =
           stringProd +
           `<tbody class="table-cont"> <tr><td>${producto.nombre}</td>
                                           <td>${producto.precio}</td>
-                                          <td class="prod_cant"> <strong class ="prod_add"> + </strong> <strong> ${producto.cantidad}</strong> <strong class ="prod_subtract"> - </strong> </td>
+                                          <td class="prod_cant"> <strong class ="prod_add"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-plus" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                          <circle cx="12" cy="12" r="9" />
+                                          <line x1="9" y1="12" x2="15" y2="12" />
+                                          <line x1="12" y1="9" x2="12" y2="15" />
+                                        </svg> </strong> <strong> ${producto.cantidad}</strong> <strong class ="prod_subtract"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-minus" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                        <circle cx="12" cy="12" r="9" />
+                                        <line x1="9" y1="12" x2="15" y2="12" />
+                                      </svg></strong> </td>
                                           <td><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                           <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                                           <line x1="4" y1="7" x2="20" y2="7" />
@@ -185,7 +197,7 @@ export function carrito(cantCarrito, carrito, vistaCarrito) {
           newWindow: true,
           offset: {
             x: 5,
-            y: 40,
+            y: 55,
           },
 
           style: {
@@ -196,5 +208,6 @@ export function carrito(cantCarrito, carrito, vistaCarrito) {
     });
   };
 
+  /* RETORNAR USUARIO PARA TIENDA */
   return usuarioTienda;
 }

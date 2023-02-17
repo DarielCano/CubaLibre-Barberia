@@ -14,6 +14,7 @@
 }
 
 .btn {
+  font-family: $font-btn;
   background-color: map-get($colors, red-color);
   color: map-get($colors, white-color);
   transition: all 0.8s ease;

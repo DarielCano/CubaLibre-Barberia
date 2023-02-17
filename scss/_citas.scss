@@ -1,4 +1,5 @@
 .contenedor-cita {
+  font-family: $fontgral;
   color: map-get($colors, white-color);
   width: 90%;
   @include margin-lat;
@@ -10,13 +11,14 @@
 }
 
 .cita {
-  /*   height: 50%; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 .cita-encabezado {
+  font-family: $font-title;
+
   height: 8rem;
   display: flex;
   flex-direction: column;

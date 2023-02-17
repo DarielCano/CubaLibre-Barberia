@@ -1,4 +1,5 @@
 .footer {
+  font-family: $font-nav;
   background-color: map-get($colors, second-color-opacity);
   color: map-get($colors, white-color);
   padding: 1rem 1rem;

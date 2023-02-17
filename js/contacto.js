@@ -4,6 +4,9 @@ import { inicioSesion } from "./class_functions.js";
 import { carrito } from "./carrito.js";
 import { usuarioLogin } from "./loginUsuario.js";
 import { commonAnimation } from "./animation.js";
+import { iniciarSesion } from "./class_functions.js";
+
+iniciarSesion("./sesion.html");
 commonAnimation();
 usuarioLogin("./sesion.html");
 carrito(".cant-carrito", ".carrito", ".vista_carrito");
@@ -12,13 +15,14 @@ const user = inicioSesion("usuarioSesion");
 
 let $nombreContacto = d.getElementById("nombre-contacto");
 let $emailContacto = d.getElementById("email-contacto");
-let $mensajeContacto = d.getElementById("mensaje-contacto");
 let $formContacto = d.getElementById("form-contacto");
 let $loader = d.querySelector(".form-loader");
 
+/* NOMBRE DE USUARIO QUE INICIO SESION */
 $nombreContacto.value = `${user.nombre} ${user.apellido}`;
 $emailContacto.value = `${user.email}`;
 
+/* EVENTO DEL FORMULARIO */
 $formContacto.addEventListener("submit", (e) => {
   e.preventDefault();
   $loader.classList.remove("none");
