@@ -46,7 +46,7 @@
   padding: 1rem 5rem;
   background-color: map-get($colors, dark-color-shadow);
   color: map-get($colors, white-color);
-  position: fixed;
+  position: absolute;
   top: 4rem;
   right: 0;
 }

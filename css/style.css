@@ -116,7 +116,6 @@ label {
   font-family: inherit;
   font-size: inherit;
   -webkit-hyphens: auto;
-      -ms-hyphens: auto;
           hyphens: auto;
   background-color: transparent;
   color: inherit;
@@ -157,7 +156,6 @@ body {
   line-height: 1.4em;
   /* opcional */
   -webkit-hyphens: auto;
-      -ms-hyphens: auto;
           hyphens: auto;
   /* opcional */
   font-smooth: always;
@@ -793,7 +791,7 @@ tbody td {
   padding: 1rem 5rem;
   background-color: rgba(0, 0, 0, 0.6);
   color: #ffffff;
-  position: fixed;
+  position: absolute;
   top: 4rem;
   right: 0;
 }

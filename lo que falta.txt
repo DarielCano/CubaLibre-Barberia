@@ -1,0 +1,3 @@
+hacer responsive la tabla del carrito
+
+agregar cerrar sesion al nav
